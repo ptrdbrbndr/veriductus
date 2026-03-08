@@ -32,7 +32,7 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(29,30,75,0.08);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 48px; height: 88px;
+    padding: 0 48px; height: 68px;
   }
 
   .nav-logo {
@@ -71,7 +71,7 @@
   .hero {
     min-height: 100vh;
     display: flex; align-items: center;
-    padding: 140px 48px 80px;
+    padding: 120px 48px 80px;
     position: relative;
     overflow: hidden;
   }
@@ -108,6 +108,19 @@
   .hero-content {
     position: relative; max-width: 640px;
     animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-logo-decoration {
+    position: absolute; right: -100px; top: 50%;
+    transform: translateY(-50%);
+    width: 500px; height: 500px;
+    opacity: 0.12;
+    z-index: 5;
+  }
+
+  .hero-logo-decoration img {
+    width: 100%; height: 100%;
+    object-fit: contain;
   }
 
   @keyframes fadeUp {
@@ -400,6 +413,7 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-blob"></div>
+  <div class="hero-logo-decoration" id="hero-logo"></div>
   <div class="hero-content">
     <div class="hero-badge">Quality Assurance &amp; Software Excellence</div>
     <h1>
@@ -532,5 +546,10 @@
   <div class="footer-copy">© 2026 Veriductus B.V.</div>
 </footer>
 
+<script>
+  var src = document.querySelector('.nav-logo img');
+  var dest = document.getElementById('hero-logo');
+  if (src && dest) { var c = src.cloneNode(true); dest.appendChild(c); }
+</script>
 </body>
 </html>
