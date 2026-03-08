@@ -539,13 +539,13 @@
     <li><a href="#services">Diensten</a></li>
     <li><a href="#approach">Aanpak</a></li>
     <li><a href="#cases">Cases</a></li>
-    <li><a href="mailto:hello@veriductus.nl" data-testid="footer-contact">Contact</a></li>
+    <li><a href="mailto:info@veriductus.nl" data-testid="footer-contact">Contact</a></li>
     <li><a href="/privacy" data-testid="footer-privacy">Privacy</a></li>
   </ul>
   <div class="footer-contact-info" style="display: flex; gap: 24px; font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 16px;">
     <div>
       <strong style="color: rgba(255,255,255,0.65);">E-mail:</strong><br>
-      <a href="mailto:hello@veriductus.nl" style="color: rgba(255,255,255,0.45); text-decoration: none;">hello@veriductus.nl</a>
+      <a href="mailto:info@veriductus.nl" style="color: rgba(255,255,255,0.45); text-decoration: none;">info@veriductus.nl</a>
     </div>
     <div>
       <strong style="color: rgba(255,255,255,0.65);">Telefoon:</strong><br>
@@ -564,7 +564,7 @@
   // Contact button handler
   function handleContactClick(e) {
     if (e && e.preventDefault) e.preventDefault();
-    const email = 'hello@veriductus.nl';
+    const email = 'info@veriductus.nl';
     const subject = 'Gesprek aanvragen - Veriductus';
     const body = 'Hallo,%0A%0AIk wil graag een gesprek inplannen met een QA-specialist.%0A%0AMet vriendelijke groet';
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
