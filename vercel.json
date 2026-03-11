@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/diensten/test-automatisering", "destination": "/diensten/test-automatisering.html" },
+    { "source": "/diensten/qa-architectuur", "destination": "/diensten/qa-architectuur.html" },
+    { "source": "/diensten/kwaliteitsmonitoring", "destination": "/diensten/kwaliteitsmonitoring.html" },
+    { "source": "/diensten/cicd-integratie", "destination": "/diensten/cicd-integratie.html" },
+    { "source": "/diensten/team-coaching", "destination": "/diensten/team-coaching.html" },
+    { "source": "/diensten/security-testing", "destination": "/diensten/security-testing.html" }
+  ]
+}
