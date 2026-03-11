@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veriductus – Beyond the Bug</title>
+<title>Veriductus – Software die werkt. Beyond the Bug.</title>
+<meta name="description" content="Veriductus is uw partner voor software kwaliteit en test automatisering. Wij helpen organisaties bugs te elimineren, risico's te verlagen en software te leveren die werkt. 12+ jaar ervaring, 150+ projecten.">
+<meta name="keywords" content="QA consultancy, test automatisering, software kwaliteit, CI/CD, testarchitectuur, softwaretesten, Nederland">
+<meta name="author" content="Veriductus B.V.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://veriductus.nl/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veriductus.nl/">
+<meta property="og:title" content="Veriductus – Software die werkt. Beyond the Bug.">
+<meta property="og:description" content="Uw partner voor software kwaliteit en test automatisering. 12+ jaar ervaring, 150+ projecten, 98% klantbehoud.">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Veriductus">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Veriductus – Software die werkt. Beyond the Bug.">
+<meta name="twitter:description" content="Uw partner voor software kwaliteit en test automatisering. 12+ jaar ervaring, 150+ projecten, 98% klantbehoud.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -389,9 +405,65 @@
   .veri-symbol {
     display: inline-block;
   }
+
+  /* COOKIE BANNER */
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+    background: var(--veriductus-navy);
+    color: rgba(255,255,255,0.85);
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    box-shadow: 0 -4px 24px rgba(29,30,75,0.18);
+    border-top: 2px solid rgba(95,195,142,0.3);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  #cookie-banner.visible { transform: translateY(0); }
+  #cookie-banner p {
+    font-size: 13px; line-height: 1.6; flex: 1; min-width: 200px; margin: 0;
+  }
+  #cookie-banner a { color: var(--veriductus-green); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
+  .btn-cookie-accept {
+    background: var(--brand-gradient);
+    color: white; border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+  }
+  .btn-cookie-accept:hover { opacity: 0.85; }
+  .btn-cookie-decline {
+    background: transparent;
+    color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px 18px; font-size: 13px; font-weight: 500;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-cookie-decline:hover { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.8); }
+
+  @media (max-width: 640px) {
+    #cookie-banner { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+    .cookie-actions { width: 100%; }
+    .btn-cookie-accept, .btn-cookie-decline { flex: 1; text-align: center; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie-instellingen" data-testid="cookie-banner">
+  <p>
+    Wij gebruiken functionele cookies om deze website goed te laten werken. Wij plaatsen geen tracking- of advertentiecookies zonder uw toestemming.
+    Meer informatie vindt u in ons <a href="/privacy" data-testid="cookie-privacy-link">privacybeleid</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn-cookie-decline" data-testid="cookie-decline" onclick="cookieChoice(false)">Alleen noodzakelijk</button>
+    <button class="btn-cookie-accept" data-testid="cookie-accept" onclick="cookieChoice(true)">Akkoord</button>
+  </div>
+</div>
+
 
 <!-- NAV -->
 <nav>
@@ -404,7 +476,7 @@
     <li><a href="#cases" data-testid="nav-cases">Cases</a></li>
     <li><a href="#about" data-testid="nav-over-ons">Over ons</a></li>
   </ul>
-  <button class="nav-cta">Gesprek inplannen →</button>
+  <button class="nav-cta" data-testid="nav-cta">Gesprek inplannen →</button>
 </nav>
 
 <!-- HERO -->
@@ -414,21 +486,21 @@
   <div class="hero-blob"></div>
   <div class="hero-logo-decoration" id="hero-logo"></div>
   <div class="hero-content">
-    <div class="hero-badge">Quality Assurance &amp; Software Excellence</div>
-    <h1>
+    <div class="hero-badge" data-testid="hero-badge">Quality Assurance &amp; Software Excellence</div>
+    <h1 data-testid="hero-heading">
       Software die werkt.<br>
       <span class="accent">Beyond the bug.</span>
     </h1>
     <p>Veriductus helpt organisaties om kwaliteit te verankeren in het hart van softwareontwikkeling — van strategie tot uitvoering.</p>
     <div class="hero-actions">
-      <button class="btn-primary">Onze aanpak bekijken</button>
+      <button class="btn-primary" data-testid="hero-cta-aanpak">Onze aanpak bekijken</button>
       <button class="btn-outline">Cases & resultaten</button>
     </div>
   </div>
 </section>
 
 <!-- STATS -->
-<div class="stats-bar">
+<div class="stats-bar" data-testid="stats-bar">
   <div class="stat-item">
     <div class="stat-number">98%</div>
     <div class="stat-label">Klantretentie</div>
@@ -448,7 +520,7 @@
 </div>
 
 <!-- SERVICES -->
-<section class="section" id="services">
+<section class="section" id="services" data-testid="section-diensten">
   <div class="section-label">Wat we doen</div>
   <h2 class="section-title">Kwaliteit als fundament,<br>niet als afterthought</h2>
   <p class="section-subtitle">Van testautomatisering tot kwaliteitsborging in agile teams — wij zorgen dat software doet wat het moet doen.</p>
@@ -488,7 +560,7 @@
 </section>
 
 <!-- PROCESS -->
-<section class="section process-section" id="approach">
+<section class="section process-section" id="approach" data-testid="section-aanpak">
   <div class="section-label">Onze werkwijze</div>
   <h2 class="section-title">Van analyse naar zekerheid</h2>
   <p class="section-subtitle" style="margin-bottom: 64px;">Een gestructureerde aanpak die kwaliteit borgt op elk moment in het traject.</p>
@@ -522,7 +594,7 @@
   <div class="gradient-content">
     <h2>Klaar om bugs definitief<br>achter je te laten?</h2>
     <p>Plan een vrijblijvend gesprek met een van onze QA-specialisten en ontdek hoe Veriductus jouw software naar het volgende niveau tilt.</p>
-    <button class="btn-white">Gesprek plannen →</button>
+    <button class="btn-white" data-testid="cta-gesprek-plannen">Gesprek plannen →</button>
   </div>
 </section>
 
@@ -610,6 +682,27 @@
       });
     }
   });
+</script>
+
+<script>
+  // Cookie consent
+  function cookieChoice(accepted) {
+    localStorage.setItem('cookie-consent', accepted ? 'accepted' : 'declined');
+    var banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.remove('visible');
+    }
+  }
+
+  (function() {
+    var consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      setTimeout(function() {
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('visible');
+      }, 800);
+    }
+  })();
 </script>
 </body>
 </html>
