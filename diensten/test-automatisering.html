@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Automatisering – Veriductus</title>
+<meta name="description" content="Veriductus bouwt geautomatiseerde testsuites die iedere commit controleren. Bugs vangen vóór productie, structureel en automatisch.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://veriductus.nl/diensten/test-automatisering">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --veriductus-blue: #4776A8;
+    --veriductus-green: #5FC38E;
+    --veriductus-navy: #1D1E4B;
+    --brand-gradient: linear-gradient(135deg, #4776A8, #5FC38E);
+    --bg-light: #F4F6FA;
+    --text-body: #3A3B5C;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(29,30,75,0.08);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .logo-wordmark {
+    font-size: 20px; font-weight: 800;
+    color: var(--veriductus-navy);
+    letter-spacing: -0.5px;
+  }
+  .logo-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--brand-gradient);
+    display: inline-block; margin-left: 2px;
+    vertical-align: middle;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    color: var(--text-body); transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--veriductus-blue); }
+  .nav-cta {
+    background: var(--brand-gradient);
+    color: white; border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 14px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.2px;
+    display: inline-block;
+  }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    background: var(--white);
+    padding: 120px 48px 80px;
+    text-align: center;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(71,118,168,0.12), rgba(95,195,142,0.12));
+    color: var(--veriductus-blue);
+    font-size: 13px; font-weight: 600;
+    padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(71,118,168,0.2);
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 800;
+    color: var(--veriductus-navy);
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-value {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-body);
+    max-width: 640px;
+    margin: 0 auto 40px;
+  }
+  .hero-ctas {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--brand-gradient);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--veriductus-blue);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--veriductus-blue);
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { background: var(--veriductus-blue); color: white; }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 48px;
+  }
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 12px; font-weight: 700;
+    color: var(--veriductus-green);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 800;
+    color: var(--veriductus-navy);
+    letter-spacing: -1px;
+    margin-bottom: 48px;
+  }
+
+  /* PROBLEEM */
+  .section-probleem { background: var(--bg-light); }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .pain-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 16px rgba(29,30,75,0.07);
+  }
+  .pain-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .pain-title {
+    font-size: 16px; font-weight: 700;
+    color: var(--veriductus-navy);
+    margin-bottom: 8px;
+  }
+  .pain-desc {
+    font-size: 14px; line-height: 1.6;
+    color: var(--text-body);
+  }
+
+  /* AANPAK */
+  .section-aanpak { background: var(--white); }
+  .step-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .step-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 16px rgba(29,30,75,0.07);
+    border-top: 3px solid transparent;
+    border-image: var(--brand-gradient) 1;
+    position: relative;
+  }
+  .step-number {
+    font-size: 13px; font-weight: 800;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .step-title {
+    font-size: 16px; font-weight: 700;
+    color: var(--veriductus-navy);
+    margin-bottom: 8px;
+  }
+  .step-desc {
+    font-size: 14px; line-height: 1.6;
+    color: var(--text-body);
+  }
+
+  /* RESULTATEN */
+  .section-resultaten { background: var(--bg-light); }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .stat-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 28px;
+    box-shadow: 0 2px 16px rgba(29,30,75,0.07);
+    text-align: center;
+  }
+  .stat-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .stat-value {
+    font-size: 36px; font-weight: 800;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .stat-label {
+    font-size: 15px; font-weight: 600;
+    color: var(--veriductus-navy);
+    margin-bottom: 6px;
+  }
+  .stat-sub {
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.5;
+  }
+
+  /* FRAMEWORKS */
+  .frameworks-note {
+    margin-top: 40px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 16px rgba(29,30,75,0.07);
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .frameworks-label {
+    font-size: 13px; font-weight: 700;
+    color: var(--veriductus-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .framework-tag {
+    background: var(--bg-light);
+    color: var(--text-body);
+    font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 100px;
+    border: 1px solid rgba(29,30,75,0.1);
+  }
+
+  /* CTA SECTION */
+  .section-cta {
+    background: var(--brand-gradient);
+    text-align: center;
+  }
+  .section-cta .section-inner {
+    display: flex; flex-direction: column; align-items: center; gap: 24px;
+  }
+  .cta-title {
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+  }
+  .cta-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  .btn-white {
+    background: white;
+    color: var(--veriductus-blue);
+    padding: 14px 36px;
+    border-radius: 10px;
+    font-size: 15px; font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .btn-white:hover { opacity: 0.92; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--veriductus-navy);
+    padding: 48px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 24px;
+  }
+  .footer-logo {
+    text-decoration: none;
+  }
+  .footer-logo .logo-wordmark {
+    color: white;
+  }
+  .footer-links {
+    display: flex; gap: 24px; list-style: none; flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: white; }
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 60px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .pain-grid, .step-grid, .stat-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    footer { padding: 36px 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo" data-testid="nav-logo">
+    <span class="logo-wordmark">Veriductus<span class="logo-dot"></span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#services">Diensten</a></li>
+    <li><a href="/#approach">Aanpak</a></li>
+    <li><a href="/#cases">Cases</a></li>
+    <li><a href="/#about">Over ons</a></li>
+  </ul>
+  <a href="mailto:info@veriductus.nl" class="nav-cta" data-testid="nav-cta">Gesprek inplannen →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge">Test Automatisering</span>
+    <h1 data-testid="hero-heading">Bugs vangen vóór productie. Structureel en automatisch.</h1>
+    <p class="hero-value">Handmatig testen schaalt niet. Veriductus bouwt geautomatiseerde testsuites die iedere commit controleren — zodat uw team vertrouwen heeft in elke release.</p>
+    <div class="hero-ctas">
+      <a href="mailto:info@veriductus.nl" class="btn-primary" data-testid="hero-cta-primary">Gesprek inplannen →</a>
+      <a href="/#services" class="btn-secondary" data-testid="hero-cta-secondary">← Alle diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEEM -->
+<section class="section-probleem" data-testid="section-probleem">
+  <div class="section-inner">
+    <div class="section-label">Herkenbaar?</div>
+    <h2 class="section-title">Klinkt dit bekend?</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="pain-icon">⏱️</span>
+        <div class="pain-title">Handmatig testen kost te veel tijd</div>
+        <p class="pain-desc">Uw team besteedt meer tijd aan regressietests dan aan nieuwe features. Iedere release is een marathon.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-icon">🐛</span>
+        <div class="pain-title">Bugs komen door in productie</div>
+        <p class="pain-desc">Ondanks uitgebreid testen slaan fouten door de mazen van het net. Gebruikers ontdekken problemen eerder dan uw team.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-icon">😰</span>
+        <div class="pain-title">Releases zijn spannend in plaats van vanzelfsprekend</div>
+        <p class="pain-desc">Een deploymoment gaat gepaard met stress en kruisvingers. Vertrouwen in software zou de norm moeten zijn.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-icon">📈</span>
+        <div class="pain-title">Geen testdekking bij groei</div>
+        <p class="pain-desc">Uw codebase groeit snel maar de testaanpak schaalte niet mee. Technische schuld in tests stapelt op.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AANPAK -->
+<section class="section-aanpak" data-testid="section-aanpak">
+  <div class="section-inner">
+    <div class="section-label">Hoe wij werken</div>
+    <h2 class="section-title">Onze aanpak</h2>
+    <div class="step-grid">
+      <div class="step-card">
+        <span class="step-number">01</span>
+        <div class="step-title">Audit huidige testpraktijk</div>
+        <p class="step-desc">We brengen in kaart wat er al is: welke tests bestaan, wat de dekking is en waar de grootste risico's liggen.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">02</span>
+        <div class="step-title">Teststrategie opstellen</div>
+        <p class="step-desc">Op basis van de audit stellen we een heldere strategie op: welke testlagen, welke tools en welke prioriteiten.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">03</span>
+        <div class="step-title">Testsuites bouwen</div>
+        <p class="step-desc">We implementeren unit-, integratie- en E2E-tests die aansluiten op uw tech stack en team. Pragmatisch en onderhoudbaar.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">04</span>
+        <div class="step-title">Integreren in CI/CD pipeline</div>
+        <p class="step-desc">Alle tests worden geïntegreerd in uw bestaande pipeline zodat iedere commit automatisch wordt geverifieerd.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTATEN -->
+<section class="section-resultaten" data-testid="section-resultaten">
+  <div class="section-inner">
+    <div class="section-label">Wat levert het op?</div>
+    <h2 class="section-title">Meetbare resultaten</h2>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-icon">📉</span>
+        <div class="stat-value">40%</div>
+        <div class="stat-label">minder bugs in productie</div>
+        <p class="stat-sub">Gemiddeld resultaat bij onze klanten na implementatie van geautomatiseerde testsuites.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">✅</span>
+        <div class="stat-value">80%+</div>
+        <div class="stat-label">testdekking binnen 3 maanden</div>
+        <p class="stat-sub">Van nauwelijks gedekte code naar een solide vangnet in minder dan een kwartaal.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🚀</span>
+        <div class="stat-value">Sneller</div>
+        <div class="stat-label">en veiliger releasen</div>
+        <p class="stat-sub">Releases worden routine in plaats van stressmomenten. Uw team deployt met vertrouwen.</p>
+      </div>
+    </div>
+    <div class="frameworks-note">
+      <span class="frameworks-label">Frameworks &amp; tools:</span>
+      <span class="framework-tag">Playwright</span>
+      <span class="framework-tag">Cypress</span>
+      <span class="framework-tag">Selenium</span>
+      <span class="framework-tag">Jest</span>
+      <span class="framework-tag">pytest</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta" data-testid="section-cta">
+  <div class="section-inner">
+    <h2 class="cta-title">Klaar om te starten?</h2>
+    <p class="cta-sub">Plan een vrijblijvend gesprek in en ontdek hoe test automatisering uw team ontlast en uw software betrouwbaarder maakt.</p>
+    <a href="mailto:info@veriductus.nl" class="btn-white" data-testid="cta-contact-btn">Neem contact op →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo" data-testid="footer-logo">
+      <span class="logo-wordmark">Veriductus<span class="logo-dot"></span></span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="/" data-testid="footer-home">Home</a></li>
+      <li><a href="/#services" data-testid="footer-diensten">Diensten</a></li>
+      <li><a href="mailto:info@veriductus.nl" data-testid="footer-contact">Contact</a></li>
+      <li><a href="/privacy" data-testid="footer-privacy">Privacy</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Veriductus B.V.</p>
+  </div>
+</footer>
+
+</body>
+</html>
