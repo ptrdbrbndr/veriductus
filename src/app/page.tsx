@@ -97,7 +97,7 @@ export default function HomePage() {
             {STATS.map((s) => (
               <div
                 key={s.label}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-[#1D1E4B]/5"
+                className="bg-white rounded-2xl p-6 shadow-sm border border-[#EAECF4]"
               >
                 <div
                   className="text-3xl font-extrabold"
@@ -131,7 +131,7 @@ export default function HomePage() {
             {GILDE_VOORDELEN.map((v) => (
               <div
                 key={v.title}
-                className="rounded-2xl p-8 border border-[#1D1E4B]/8 bg-[#F4F6FA] hover:shadow-md transition-shadow"
+                className="rounded-2xl p-8 border border-[#E2E4EC] bg-[#F4F6FA] hover:shadow-md transition-shadow"
               >
                 <div className="text-4xl mb-4">{v.icon}</div>
                 <h3 className="text-lg font-bold text-[#1D1E4B] mb-3">{v.title}</h3>
@@ -192,10 +192,10 @@ export default function HomePage() {
                 className={`rounded-xl p-5 border ${
                   item.highlight
                     ? "border-[#5FC38E] bg-[#5FC38E]/5"
-                    : "border-[#1D1E4B]/8 bg-[#F4F6FA]"
+                    : "border-[#E2E4EC] bg-[#F4F6FA]"
                 }`}
               >
-                <div className={`text-sm font-bold mb-1 ${item.highlight ? "text-[#4776A8]" : "text-[#3A3B5C]/60"}`}>
+                <div className={`text-sm font-bold mb-1 ${item.highlight ? "text-[#4776A8]" : "text-[#6B6C7F]"}`}>
                   {item.label}
                 </div>
                 <div className="text-sm text-[#3A3B5C]">{item.text}</div>

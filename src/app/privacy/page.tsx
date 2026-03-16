@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         <p className="text-[#3A3B5C] mb-4">
           Op grond van de AVG heeft u het recht op inzage, correctie, verwijdering en bezwaar.
           Stuur uw verzoek naar{" "}
-          <a href="mailto:info@veriductus.nl" className="text-[#4776A8] hover:underline">
+          <a href="mailto:info@veriductus.nl" className="text-[#4776A8] underline">
             info@veriductus.nl
           </a>
           . Wij reageren binnen 30 dagen.
@@ -76,7 +76,7 @@ export default function PrivacyPage() {
           Veriductus — onderdeel van Ductus Holding
           <br />
           E-mail:{" "}
-          <a href="mailto:info@veriductus.nl" className="text-[#4776A8] hover:underline">
+          <a href="mailto:info@veriductus.nl" className="text-[#4776A8] underline">
             info@veriductus.nl
           </a>
           <br />

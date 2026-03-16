@@ -78,7 +78,7 @@ export default function GildePage() {
             {GILDE_WAARDEN.map((w) => (
               <div
                 key={w.titel}
-                className="rounded-2xl p-8 bg-[#F4F6FA] border border-[#1D1E4B]/8"
+                className="rounded-2xl p-8 bg-[#F4F6FA] border border-[#E2E4EC]"
               >
                 <div
                   className="w-2 h-8 rounded-full mb-4"
@@ -107,7 +107,7 @@ export default function GildePage() {
             {VOORDELEN_VOOR_TESTERS.map((v) => (
               <li
                 key={v}
-                className="flex items-start gap-3 bg-white rounded-xl p-5 border border-[#1D1E4B]/8"
+                className="flex items-start gap-3 bg-white rounded-xl p-5 border border-[#E2E4EC]"
               >
                 <div
                   className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5"
@@ -134,7 +134,7 @@ export default function GildePage() {
               { stap: "02", titel: "Kennismaking", tekst: "Een gesprek om te kijken of er een match is — voor u en voor het gilde." },
               { stap: "03", titel: "Onboarding", tekst: "U wordt opgenomen in het gilde en krijgt toegang tot de community en opdrachten." },
             ].map((s) => (
-              <div key={s.stap} className="text-center p-6 rounded-2xl bg-[#F4F6FA] border border-[#1D1E4B]/8">
+              <div key={s.stap} className="text-center p-6 rounded-2xl bg-[#F4F6FA] border border-[#E2E4EC]">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm mx-auto mb-4"
                   style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}

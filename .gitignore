@@ -43,3 +43,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 testing/vibe-core/auth-state.json
+test-results/
+testing/vibe-reports/*.png
+testing/vibe-reports/html/
+testing/vibe-reports/
+test-results/

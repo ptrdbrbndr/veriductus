@@ -62,7 +62,7 @@ export default function DienstenPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-28 pb-16 px-6 text-center bg-white border-b border-[#1D1E4B]/8">
+      <section className="pt-28 pb-16 px-6 text-center bg-white border-b border-[#E2E4EC]">
         <div className="max-w-3xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 text-white"
@@ -87,7 +87,7 @@ export default function DienstenPage() {
             <div
               key={d.slug}
               data-testid={`dienst-${d.slug}`}
-              className="bg-white rounded-2xl p-8 border border-[#1D1E4B]/8 hover:shadow-lg transition-shadow flex flex-col"
+              className="bg-white rounded-2xl p-8 border border-[#E2E4EC] hover:shadow-lg transition-shadow flex flex-col"
             >
               <div className="text-4xl mb-4">{d.icon}</div>
               <h2 className="text-xl font-bold text-[#1D1E4B] mb-2">{d.titel}</h2>

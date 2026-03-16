@@ -18,7 +18,7 @@ export default function WordGildeLidPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-28 pb-16 px-6 text-center bg-white border-b border-[#1D1E4B]/8">
+      <section className="pt-28 pb-16 px-6 text-center bg-white border-b border-[#E2E4EC]">
         <div className="max-w-3xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 text-white"
@@ -40,7 +40,7 @@ export default function WordGildeLidPage() {
       <section className="py-16 px-6 bg-[#F4F6FA]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {VOORDELEN.map((v) => (
-            <div key={v.titel} className="bg-white rounded-2xl p-6 border border-[#1D1E4B]/8">
+            <div key={v.titel} className="bg-white rounded-2xl p-6 border border-[#E2E4EC]">
               <div className="text-3xl mb-3">{v.icon}</div>
               <h3 className="font-bold text-[#1D1E4B] mb-2">{v.titel}</h3>
               <p className="text-sm text-[#3A3B5C] leading-relaxed">{v.tekst}</p>

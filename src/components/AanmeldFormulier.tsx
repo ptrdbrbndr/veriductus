@@ -48,7 +48,7 @@ export function AanmeldFormulier() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       data-testid="aanmeld-form"
-      className="space-y-6 bg-[#F4F6FA] rounded-2xl p-8 border border-[#1D1E4B]/8"
+      className="space-y-6 bg-[#F4F6FA] rounded-2xl p-8 border border-[#E2E4EC]"
     >
       <div>
         <Label htmlFor="aanmeld-naam">Naam *</Label>
@@ -131,7 +131,7 @@ export function AanmeldFormulier() {
         {status === "loading" ? "Versturen..." : "Aanmelding versturen"}
       </Button>
 
-      <p className="text-xs text-[#3A3B5C]/60 text-center">
+      <p className="text-xs text-[#6B6C7F] text-center">
         Uw gegevens worden vertrouwelijk behandeld. Zie onze{" "}
         <a href="/privacy" className="underline hover:text-[#4776A8]">
           privacyverklaring

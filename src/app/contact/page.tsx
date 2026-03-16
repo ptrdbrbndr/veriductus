@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-28 pb-16 px-6 text-center bg-white border-b border-[#1D1E4B]/8">
+      <section className="pt-28 pb-16 px-6 text-center bg-white border-b border-[#E2E4EC]">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-extrabold text-[#1D1E4B] mb-4">
             Gesprek aanvragen
@@ -27,7 +27,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-12 px-6 bg-white border-t border-[#1D1E4B]/8">
+      <section className="py-12 px-6 bg-white border-t border-[#E2E4EC]">
         <div className="max-w-2xl mx-auto text-center text-sm text-[#3A3B5C]">
           <p>Liever direct mailen?</p>
           <a

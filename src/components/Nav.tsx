@@ -16,7 +16,7 @@ export function Nav() {
   return (
     <nav
       data-testid="nav"
-      className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-[#1D1E4B]/8"
+      className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-[#E2E4EC]"
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -84,7 +84,7 @@ export function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white border-t border-[#1D1E4B]/8 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-[#E2E4EC] px-6 py-4 flex flex-col gap-4">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
