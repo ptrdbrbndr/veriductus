@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Betrouwbare kwaliteit, gedreven professionals",
+  title: { absolute: "Veriductus — Betrouwbare kwaliteit, gedreven professionals" },
   description:
     "Veriductus is een detacheringsorganisatie van software testers. Wij werken via het Ductus-gildemodel: zelfstandig en samen sterk.",
 };

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacyverklaring",
+  title: "Privacyverklaring | Veriductus",
   description: "Privacyverklaring van Veriductus. Hoe wij omgaan met uw persoonsgegevens.",
 };
 

@@ -2,7 +2,7 @@
 set -e
 
 echo "=== Vibe Check — Veriductus ==="
-echo "Base URL: ${VIBE_BASE_URL:-http://localhost:3000}"
+echo "Base URL: ${VIBE_BASE_URL:-http://localhost:3001}"
 echo ""
 
 # Zorg dat browsers geïnstalleerd zijn
