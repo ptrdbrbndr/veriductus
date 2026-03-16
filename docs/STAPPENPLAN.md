@@ -6,14 +6,18 @@
 
 ## Wat al gebouwd/live is
 
-- Productvision vastgesteld (`productvision.md`)
+- Productvision vastgesteld v2.0 — gildemodel-framing (`PRODUCT-VISION.md`)
 - Business Model Canvas uitgewerkt (`business-model-canvas.md`)
 - Marketing- en businessplan 2026 geschreven (`marketingplan.md`)
 - Diensten gedefinieerd: Test Automatisering, QA Architectuur, Kwaliteitsmonitoring, CI/CD Integratie, Team Coaching, Security Testing
-- Tarifindicatie vastgesteld: €115–€165/uur, dagrate €920–€1.320
-- KPI's voor 2026 bepaald
+- SECURITY-BASELINE.md aanwezig (privacy-niveau Midden)
+- Next.js 16 website gebouwd en live op veriductus.nl (2026-03-16)
+  - Homepage, Diensten, Word Gilde-lid, Contact, Privacy
+  - API routes: /api/intake en /api/aanmelden
+  - Supabase tabellen: leads, gilde_kandidaten (RLS ingeschakeld)
+  - Vercel deployment actief, env vars ingesteld
 
-Veriductus is een **dienstverleningsbedrijf**, geen SaaS-product. De stappen hieronder zijn gericht op bedrijfsopbouw, marktpenetratie en operationele inrichting — niet op softwareontwikkeling.
+Veriductus is een **detacheringsorganisatie van software testers** via het Ductus-gildemodel.
 
 ---
 
@@ -157,7 +161,7 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 
 | Stap | Fase | Prioriteit | Status |
 |---|---|---|---|
-| 1. Website live + SEO | 1 | Kritiek | ❌ |
+| 1. Website live + SEO | 1 | Kritiek | ✅ |
 | 2. LinkedIn-aanwezigheid | 1 | Kritiek | ❌ |
 | 3. CRM + salesproces | 1 | Kritiek | ❌ |
 | 4. Whitepaper QA-staat | 1 | Hoog | ❌ |
