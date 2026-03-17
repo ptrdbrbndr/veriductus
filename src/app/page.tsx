@@ -50,16 +50,21 @@ export default function HomePage() {
           style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}
         />
 
+        {/* Watermark logo */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <Image
+            src="/logo.png"
+            alt=""
+            width={1200}
+            height={570}
+            className="w-[90vw] max-w-5xl opacity-[0.04] blur-sm"
+            priority
+            aria-hidden
+          />
+        </div>
+
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <Image
-              src="/logo.png"
-              alt="Veriductus"
-              width={320}
-              height={152}
-              className="h-20 w-auto mb-8"
-              priority
-            />
             <h1 className="text-4xl md:text-5xl font-extrabold text-[#1D1E4B] leading-tight mb-6">
               Betrouwbare kwaliteit,{" "}
               <span
