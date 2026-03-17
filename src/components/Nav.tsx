@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const NAV_LINKS = [
@@ -20,22 +21,15 @@ export function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" data-testid="nav-logo">
-          <span
-            className="text-xl font-extrabold tracking-tight"
-            style={{ color: "#1D1E4B" }}
-          >
-            Veri
-            <span
-              style={{
-                background: "linear-gradient(135deg, #4776A8, #5FC38E)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              ductus
-            </span>
-          </span>
+        <Link href="/" className="flex items-center" data-testid="nav-logo">
+          <Image
+            src="/logo.png"
+            alt="Veriductus"
+            width={148}
+            height={70}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}

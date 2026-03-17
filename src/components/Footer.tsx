@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const DIENSTEN_LINKS = [
   { href: "/diensten/test-automatisering", label: "Test Automatisering" },
@@ -14,18 +15,13 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Merk */}
         <div>
-          <span className="text-xl font-extrabold tracking-tight text-white">
-            Veri
-            <span
-              style={{
-                background: "linear-gradient(135deg, #4776A8, #5FC38E)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              ductus
-            </span>
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Veriductus"
+            width={148}
+            height={70}
+            className="h-9 w-auto brightness-0 invert"
+          />
           <p className="mt-3 text-sm leading-relaxed text-white/60">
             Betrouwbare kwaliteit, gedreven professionals. Detacheringsorganisatie
             van software testers via het Ductus-gildemodel.
