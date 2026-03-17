@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: { absolute: "Veriductus — Betrouwbare kwaliteit, gedreven professionals" },
@@ -43,7 +44,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="min-h-screen flex items-center relative overflow-hidden pt-24 pb-20 px-6">
+      <section className="min-h-screen flex items-center relative overflow-hidden pt-28 pb-20 px-6">
         <div
           className="absolute right-0 top-0 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none"
           style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}
@@ -51,12 +52,14 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-6 text-white"
-              style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}
-            >
-              Ductus Gildemodel
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Veriductus"
+              width={320}
+              height={152}
+              className="h-20 w-auto mb-8"
+              priority
+            />
             <h1 className="text-4xl md:text-5xl font-extrabold text-[#1D1E4B] leading-tight mb-6">
               Betrouwbare kwaliteit,{" "}
               <span

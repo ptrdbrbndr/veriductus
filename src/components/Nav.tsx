@@ -19,15 +19,15 @@ export function Nav() {
       data-testid="nav"
       className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-[#E2E4EC]"
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center" data-testid="nav-logo">
           <Image
             src="/logo.png"
             alt="Veriductus"
-            width={148}
-            height={70}
-            className="h-9 w-auto"
+            width={220}
+            height={104}
+            className="h-14 w-auto"
             priority
           />
         </Link>

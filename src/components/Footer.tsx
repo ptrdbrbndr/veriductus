@@ -18,9 +18,9 @@ export function Footer() {
           <Image
             src="/logo.png"
             alt="Veriductus"
-            width={148}
-            height={70}
-            className="h-9 w-auto brightness-0 invert"
+            width={220}
+            height={104}
+            className="h-14 w-auto brightness-0 invert"
           />
           <p className="mt-3 text-sm leading-relaxed text-white/60">
             Betrouwbare kwaliteit, gedreven professionals. Detacheringsorganisatie
