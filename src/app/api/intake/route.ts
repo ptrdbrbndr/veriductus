@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createServerClient } from "@/lib/supabase/server";
 
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
 const schema = z.object({
   naam: z.string().min(2),
   email: z.string().email(),
@@ -9,7 +11,22 @@ const schema = z.object({
   rol: z.enum(["CTO / VP Engineering", "Hoofd QA / Lead Tester", "IT Manager", "Anders"]),
   herkomst: z.enum(["Website", "LinkedIn", "Aanbeveling", "Anders"]),
   bericht: z.string().min(10),
+  consent: z.literal(true),
+  consent_at: z.string().datetime(),
+  turnstileToken: z.string().min(1),
 });
+
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    console.error("[intake] TURNSTILE_SECRET_KEY niet geconfigureerd");
+    return false;
+  }
+  const body = new URLSearchParams({ secret, response: token });
+  const res = await fetch(TURNSTILE_VERIFY_URL, { method: "POST", body });
+  const data = (await res.json()) as { success: boolean };
+  return data.success === true;
+}
 
 export async function POST(req: NextRequest) {
   if (req.headers.get("content-type") !== "application/json") {
@@ -28,7 +45,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ fout: "Vul alle verplichte velden correct in" }, { status: 400 });
   }
 
-  const { naam, email, bedrijf, rol, herkomst, bericht } = parsed.data;
+  const { naam, email, bedrijf, rol, herkomst, bericht, consent_at, turnstileToken } = parsed.data;
+
+  const turnstileOk = await verifyTurnstile(turnstileToken);
+  if (!turnstileOk) {
+    return NextResponse.json({ fout: "Spambeveiliging mislukt. Probeer het opnieuw." }, { status: 400 });
+  }
 
   try {
     const supabase = createServerClient();
@@ -39,6 +61,7 @@ export async function POST(req: NextRequest) {
       rol,
       bericht,
       herkomst: herkomst.toLowerCase(),
+      consent_at,
     });
 
     if (error) {

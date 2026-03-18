@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -19,12 +20,14 @@ const schema = z.object({
   rol: z.enum(ROLLEN, { message: "Selecteer uw rol" }),
   herkomst: z.enum(HERKOMSTEN, { message: "Hoe heeft u ons gevonden?" }),
   bericht: z.string().min(10, "Beschrijf kort uw vraag of behoefte"),
+  consent: z.literal(true, "Je moet akkoord gaan met de privacyverklaring om door te gaan."),
 });
 
 type FormData = z.infer<typeof schema>;
 
 export function IntakeFormulier() {
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const {
     register,
@@ -34,16 +37,22 @@ export function IntakeFormulier() {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   async function onSubmit(data: FormData) {
+    if (!turnstileToken) return;
     setStatus("loading");
     try {
       const res = await fetch("/api/intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          turnstileToken,
+          consent_at: new Date().toISOString(),
+        }),
       });
       if (!res.ok) throw new Error();
       setStatus("ok");
       reset();
+      setTurnstileToken(null);
     } catch {
       setStatus("error");
     }
@@ -137,6 +146,33 @@ export function IntakeFormulier() {
         )}
       </div>
 
+      <div className="flex items-start gap-3">
+        <input
+          type="checkbox"
+          id="contact-consent"
+          data-testid="consent-checkbox"
+          className="mt-1 h-4 w-4 rounded border-gray-300 accent-[#4776A8]"
+          {...register("consent")}
+        />
+        <Label htmlFor="contact-consent" className="text-sm leading-snug cursor-pointer">
+          Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in de{" "}
+          <a href="/privacy" className="underline hover:text-[#4776A8]">
+            privacyverklaring
+          </a>
+          .
+        </Label>
+      </div>
+      {errors.consent && (
+        <p className="text-red-600 text-sm -mt-4">{errors.consent.message}</p>
+      )}
+
+      <div data-testid="turnstile-widget">
+        <Turnstile
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          onSuccess={(token) => setTurnstileToken(token)}
+        />
+      </div>
+
       {status === "ok" && (
         <div
           role="status"
@@ -158,7 +194,7 @@ export function IntakeFormulier() {
       <Button
         type="submit"
         data-testid="contact-submit"
-        disabled={status === "loading"}
+        disabled={status === "loading" || !turnstileToken}
         className="w-full text-white font-semibold"
         style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}
       >
