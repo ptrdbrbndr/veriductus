@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: { absolute: "Veriductus — Betrouwbare kwaliteit, gedreven professionals" },
@@ -44,10 +44,13 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="min-h-screen flex items-center relative overflow-hidden pt-28 pb-20 px-6">
+      <section className="hero-bg min-h-screen flex items-center relative overflow-hidden pt-28 pb-20 px-6">
         <div
-          className="absolute right-0 top-0 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none"
-          style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}
+          className="absolute right-[-100px] top-[-80px] w-[580px] h-[580px] rounded-full pointer-events-none"
+          style={{
+            background: "rgba(95, 195, 142, 0.10)",
+            border: "1px solid rgba(95, 195, 142, 0.25)",
+          }}
         />
 
         {/* Watermark logo */}
@@ -57,13 +60,13 @@ export default function HomePage() {
             alt=""
             width={1200}
             height={570}
-            className="w-[90vw] max-w-5xl opacity-[0.04] blur-sm"
+            className="w-[90vw] max-w-5xl opacity-[0.05] blur-sm"
             priority
             aria-hidden
           />
         </div>
 
-        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-[#1D1E4B] leading-tight mb-6">
               Betrouwbare kwaliteit,{" "}
@@ -105,7 +108,7 @@ export default function HomePage() {
             {STATS.map((s) => (
               <div
                 key={s.label}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-[#EAECF4]"
+                className="bg-white rounded-2xl p-6 shadow-sm border border-[#EAECF4] relative z-10"
               >
                 <div
                   className="text-3xl font-extrabold"

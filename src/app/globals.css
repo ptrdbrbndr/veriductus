@@ -133,3 +133,9 @@
     @apply font-sans;
   }
 }
+
+.hero-bg {
+  background-color: #f0f4f7;
+  background-image: radial-gradient(circle, #b8c8d8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
