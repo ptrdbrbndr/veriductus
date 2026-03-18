@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -50,9 +48,7 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body className={`${inter.variable} font-sans antialiased bg-[#F4F6FA] text-[#3A3B5C]`}>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

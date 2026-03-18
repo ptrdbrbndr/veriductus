@@ -1,6 +1,6 @@
 # Stappenplan — Veriductus
 
-> Status per 2026-03-15
+> Status per 2026-03-18
 
 ---
 
@@ -162,10 +162,10 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 | Stap | Fase | Prioriteit | Status |
 |---|---|---|---|
 | 1. Website live + SEO | 1 | Kritiek | ✅ |
-| 2. LinkedIn-aanwezigheid | 1 | Kritiek | ❌ |
-| 3. CRM + salesproces | 1 | Kritiek | ❌ |
-| 4. Whitepaper QA-staat | 1 | Hoog | ❌ |
-| 5. Quick Scan standaardiseren | 1 | Hoog | ❌ |
+| 2. LinkedIn-aanwezigheid | 1 | Kritiek | ✅ |
+| 3. CRM + salesproces | 1 | Kritiek | ✅ |
+| 4. Whitepaper QA-staat | 1 | Hoog | ✅ |
+| 5. Quick Scan standaardiseren | 1 | Hoog | ✅ |
 | 6. 5 nieuwe klanten | 2 | Kritiek | ❌ |
 | 7. Webinar testautomatisering | 2 | Hoog | ❌ |
 | 8. Klantcase publiceren | 2 | Hoog | ❌ |

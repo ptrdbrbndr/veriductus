@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Diensten",
@@ -11,50 +12,62 @@ const DIENSTEN = [
   {
     slug: "test-automatisering",
     titel: "Test Automatisering",
-    icon: "⚙️",
     korte_beschrijving: "Geautomatiseerde testsuites die bugs vangen vóór productie.",
     beschrijving:
       "Onze gilde-ondernemers bouwen robuuste geautomatiseerde testsuites — van unit- en integratietests tot volledige E2E-pijplijnen. Frameworks: Playwright, Cypress, Selenium, Jest, pytest.",
+    foto: "https://images.unsplash.com/photo-1607706189992-eae578626c86?w=700&q=80&auto=format&fit=crop",
+    fotoAlt: "Developer schrijft code op een laptop",
+    accentKleur: "#4776A8",
   },
   {
     slug: "qa-architectuur",
     titel: "QA Architectuur",
-    icon: "🏗️",
     korte_beschrijving: "Een schaalbaar testkader dat past bij uw tech stack.",
     beschrijving:
       "Geen generieke methodiek over uw organisatie leggen. Wij ontwerpen een QA-strategie die aansluit op uw teams, tools en doelstellingen — en die met u meegroeit.",
+    foto: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&auto=format&fit=crop",
+    fotoAlt: "Team bespreekt architectuur op een whiteboard",
+    accentKleur: "#5FC38E",
   },
   {
     slug: "kwaliteitsmonitoring",
     titel: "Kwaliteitsmonitoring",
-    icon: "📊",
     korte_beschrijving: "Continue zichtbaarheid op softwarekwaliteit.",
     beschrijving:
       "Dashboards, rapportages en signalering bij kwaliteitsafwijkingen. Problemen worden vroeg gesignaleerd, niet laat ontdekt.",
+    foto: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop",
+    fotoAlt: "Analytics dashboard met kwaliteitsmetrieken",
+    accentKleur: "#4776A8",
   },
   {
     slug: "cicd-integratie",
     titel: "CI/CD Integratie",
-    icon: "🔗",
     korte_beschrijving: "Kwaliteitspoorten in uw bestaande pipeline.",
     beschrijving:
       "GitHub Actions, GitLab CI, Azure DevOps, Jenkins — wij bouwen kwaliteitscontroles in uw leverstraat zodat gebroken code nooit productie bereikt.",
+    foto: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80&auto=format&fit=crop",
+    fotoAlt: "Serverinfrastructuur en deployment pipeline",
+    accentKleur: "#1D1E4B",
   },
   {
     slug: "team-coaching",
     titel: "Team Coaching",
-    icon: "🎓",
     korte_beschrijving: "Ontwikkelteams leren denken in kwaliteit.",
     beschrijving:
       "Van mindset tot tooling. Wij trainen en begeleiden teams in TDD, BDD en quality-first denken. Kennisoverdracht is altijd ons doel.",
+    foto: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80&auto=format&fit=crop",
+    fotoAlt: "Team samenwerking in een kantooromgeving",
+    accentKleur: "#5FC38E",
   },
   {
     slug: "security-testing",
     titel: "Security Testing",
-    icon: "🔒",
     korte_beschrijving: "OWASP-gebaseerde kwetsbaarheidstests.",
     beschrijving:
       "Penetratietests, vulnerability scanning en security code reviews. Wij vinden kwetsbaarheden vóór aanvallers dat doen.",
+    foto: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=700&q=80&auto=format&fit=crop",
+    fotoAlt: "Beveiligingsanalyse en cybersecurity",
+    accentKleur: "#4776A8",
   },
 ];
 
@@ -82,24 +95,54 @@ export default function DienstenPage() {
 
       {/* Diensten grid */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {DIENSTEN.map((d) => (
             <div
               key={d.slug}
               data-testid={`dienst-${d.slug}`}
-              className="bg-white rounded-2xl p-8 border border-[#E2E4EC] hover:shadow-lg transition-shadow flex flex-col"
+              className="bg-white rounded-2xl border border-[#E2E4EC] hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col overflow-hidden group"
             >
-              <div className="text-4xl mb-4">{d.icon}</div>
-              <h2 className="text-xl font-bold text-[#1D1E4B] mb-2">{d.titel}</h2>
-              <p className="text-sm font-medium text-[#4776A8] mb-3">{d.korte_beschrijving}</p>
-              <p className="text-sm text-[#3A3B5C] leading-relaxed flex-1">{d.beschrijving}</p>
-              <Link
-                href="/contact"
-                data-testid={`dienst-${d.slug}-cta`}
-                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#4776A8] hover:text-[#5FC38E] transition-colors"
-              >
-                Meer weten → gesprek aanvragen
-              </Link>
+              {/* Foto header */}
+              <div className="relative h-44 overflow-hidden">
+                <Image
+                  src={d.foto}
+                  alt={d.fotoAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Gradient overlay */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `linear-gradient(to top, ${d.accentKleur}E6 0%, ${d.accentKleur}55 50%, transparent 100%)`,
+                  }}
+                />
+                {/* Titel op de foto */}
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h2 className="text-lg font-extrabold text-white drop-shadow-sm leading-tight">
+                    {d.titel}
+                  </h2>
+                  <p className="text-xs text-white/90 font-medium mt-0.5">
+                    {d.korte_beschrijving}
+                  </p>
+                </div>
+              </div>
+
+              {/* Kaartinhoud */}
+              <div className="p-6 flex flex-col flex-1">
+                <p className="text-sm text-[#3A3B5C] leading-relaxed flex-1">
+                  {d.beschrijving}
+                </p>
+                <Link
+                  href="/contact"
+                  data-testid={`dienst-${d.slug}-cta`}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold transition-colors hover:opacity-80"
+                  style={{ color: d.accentKleur }}
+                >
+                  Meer weten → gesprek aanvragen
+                </Link>
+              </div>
             </div>
           ))}
         </div>
