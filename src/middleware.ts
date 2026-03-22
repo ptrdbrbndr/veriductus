@@ -1,7 +1,25 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const COMING_SOON = true;
+
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Coming soon: redirect alle publieke pagina's naar / (behalve assets en portaal)
+  if (
+    COMING_SOON &&
+    pathname !== "/" &&
+    !pathname.startsWith("/portaal") &&
+    !pathname.startsWith("/_next") &&
+    !pathname.startsWith("/api") &&
+    !pathname.match(/\.(ico|png|jpg|jpeg|svg|webp|woff2?|ttf)$/)
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
+    return NextResponse.redirect(url);
+  }
+
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -29,8 +47,6 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { pathname } = request.nextUrl;
-
   // Bescherm alle /portaal routes behalve /portaal/login
   if (pathname.startsWith("/portaal") && pathname !== "/portaal/login") {
     if (!user) {
@@ -51,5 +67,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/portaal/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };
