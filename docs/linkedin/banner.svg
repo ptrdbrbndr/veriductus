@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 768" width="1536" height="768">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="48" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+      <line x1="0" y1="0" x2="48" y2="0" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+    <linearGradient id="vGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4776A8"/>
+      <stop offset="100%" stop-color="#5FC38E"/>
+    </linearGradient>
+    <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4776A8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#5FC38E" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1536" height="768" fill="#1D1E4B"/>
+
+  <!-- Diagonal grid pattern -->
+  <rect width="1536" height="768" fill="url(#grid)"/>
+
+  <!-- Subtle accent line left edge -->
+  <rect x="80" y="220" width="4" height="200" fill="url(#vGrad)" rx="2"/>
+
+  <!-- LEFT SIDE CONTENT -->
+
+  <!-- Label -->
+  <text
+    x="108"
+    y="268"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="22"
+    font-weight="600"
+    letter-spacing="3"
+    fill="#5FC38E"
+    text-anchor="start"
+  >QA &amp; SOFTWARE TESTING CONSULTANCY</text>
+
+  <!-- Tagline line 1 -->
+  <text
+    x="108"
+    y="360"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="74"
+    font-weight="800"
+    fill="#ffffff"
+    text-anchor="start"
+  >Betrouwbare kwaliteit,</text>
+
+  <!-- Tagline line 2 -->
+  <text
+    x="108"
+    y="452"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="74"
+    font-weight="800"
+    fill="#ffffff"
+    text-anchor="start"
+  >gedreven professionals.</text>
+
+  <!-- Domain -->
+  <text
+    x="108"
+    y="524"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="26"
+    font-weight="500"
+    letter-spacing="1"
+    fill="#4776A8"
+    text-anchor="start"
+  >veriductus.nl</text>
+
+  <!-- RIGHT SIDE — decorative background circle (large, faint) -->
+  <circle cx="1216" cy="384" r="260" fill="url(#circleGrad)"/>
+
+  <!-- Logo circle -->
+  <circle cx="1216" cy="350" r="100" fill="url(#vGrad)"/>
+
+  <!-- V lettermark -->
+  <text
+    x="1216"
+    y="392"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="110"
+    font-weight="900"
+    fill="#ffffff"
+    text-anchor="middle"
+    dominant-baseline="auto"
+  >V</text>
+
+  <!-- VERIDUCTUS wordmark below -->
+  <text
+    x="1216"
+    y="510"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="30"
+    font-weight="700"
+    letter-spacing="8"
+    fill="#ffffff"
+    text-anchor="middle"
+    opacity="0.90"
+  >VERIDUCTUS</text>
+
+  <!-- Decorative checkmarks bottom-right area (very subtle) -->
+  <text x="1380" y="680" font-family="system-ui, sans-serif" font-size="64" fill="#ffffff" opacity="0.12">✓</text>
+  <text x="1290" y="720" font-family="system-ui, sans-serif" font-size="48" fill="#ffffff" opacity="0.10">✓</text>
+  <text x="1440" y="600" font-family="system-ui, sans-serif" font-size="40" fill="#5FC38E" opacity="0.12">✓</text>
+  <text x="1340" y="630" font-family="system-ui, sans-serif" font-size="52" fill="#ffffff" opacity="0.08">✓</text>
+
+  <!-- Thin separator line between left and right -->
+  <line x1="920" y1="200" x2="920" y2="568" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+</svg>
