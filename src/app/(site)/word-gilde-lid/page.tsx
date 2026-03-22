@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { AanmeldFormulier } from "@/components/AanmeldFormulier";
-import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Word Gilde-lid",
@@ -8,57 +8,28 @@ export const metadata: Metadata = {
     "Meld u aan als kandidaat-gildelid bij Veriductus. Samenwerken aan zelfstandig ondernemerschap als software tester.",
 };
 
-const IconUsers = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-    <circle cx="9" cy="7" r="4"/>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-  </svg>
-);
-
-const IconBoek = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-  </svg>
-);
-
-const IconBriefcase = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-  </svg>
-);
-
-const IconWind = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/>
-    <path d="M9.6 4.6A2 2 0 1 1 11 8H2"/>
-    <path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
-  </svg>
-);
-
-type VoordeelItem = { icon: ReactNode; titel: string; tekst: string };
-
-const VOORDELEN: VoordeelItem[] = [
+const VOORDELEN = [
   {
-    icon: <IconUsers />,
+    src: "/images/gilde/community.jpg",
+    alt: "Nederlandse software testers werken samen aan een project",
     titel: "Niet alleen",
     tekst: "Een vakgemeenschap van gedreven software testers om op terug te vallen.",
   },
   {
-    icon: <IconBoek />,
+    src: "/images/gilde/kennisdeling.jpg",
+    alt: "Kennisdelingsbijeenkomst met Nederlandse IT-professionals",
     titel: "Kennisdeling",
     tekst: "Leer van collega-ondernemers, deel ervaringen en groei samen.",
   },
   {
-    icon: <IconBriefcase />,
+    src: "/images/gilde/opdrachten.jpg",
+    alt: "Software tester aan het werk bij een Nederlandse opdrachtgever",
     titel: "Opdrachten",
     tekst: "Het gilde brengt opdrachten aan via het Veriductus-netwerk.",
   },
   {
-    icon: <IconWind />,
+    src: "/images/gilde/vrijheid.jpg",
+    alt: "Zelfstandig ondernemer in Nederland — vrijheid en flexibiliteit",
     titel: "Vrijheid",
     tekst: "U blijft zelfstandig ondernemer. Het gilde geeft rugdekking, geen beperkingen.",
   },
@@ -90,15 +61,19 @@ export default function WordGildeLidPage() {
       <section className="py-16 px-6 bg-[#F4F6FA]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {VOORDELEN.map((v) => (
-            <div key={v.titel} className="bg-white rounded-2xl p-6 border border-[#E2E4EC] flex flex-col items-start gap-4">
-              <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center text-white flex-shrink-0"
-                style={{ background: "linear-gradient(135deg, #4776A8, #5FC38E)" }}
-              >
-                {v.icon}
+            <div key={v.titel} className="bg-white rounded-2xl overflow-hidden border border-[#E2E4EC] flex flex-col">
+              <div className="relative h-40 w-full">
+                <Image
+                  src={v.src}
+                  alt={v.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1D1E4B]/40 to-transparent" />
               </div>
-              <div>
-                <h3 className="font-bold text-[#1D1E4B] mb-1">{v.titel}</h3>
+              <div className="p-6 flex flex-col gap-1">
+                <h3 className="font-bold text-[#1D1E4B]">{v.titel}</h3>
                 <p className="text-sm text-[#3A3B5C] leading-relaxed">{v.tekst}</p>
               </div>
             </div>
