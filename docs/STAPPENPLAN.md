@@ -1,6 +1,6 @@
 # Stappenplan — Veriductus
 
-> Status per 2026-03-18
+> Status per 2026-03-19
 
 ---
 
@@ -12,10 +12,13 @@
 - Diensten gedefinieerd: Test Automatisering, QA Architectuur, Kwaliteitsmonitoring, CI/CD Integratie, Team Coaching, Security Testing
 - SECURITY-BASELINE.md aanwezig (privacy-niveau Midden)
 - Next.js 16 website gebouwd en live op veriductus.nl (2026-03-16)
-  - Homepage, Diensten, Word Gilde-lid, Contact, Privacy
+  - Homepage, Diensten (met foto-headers), Word Gilde-lid, Contact, Privacy
   - API routes: /api/intake en /api/aanmelden
   - Supabase tabellen: leads, gilde_kandidaten (RLS ingeschakeld)
   - Vercel deployment actief, env vars ingesteld
+- **Intern portaal** (`/portaal`) live achter Supabase login (2026-03-19)
+  - Login, dashboard, en 4 doc-pagina's: LinkedIn, CRM, Whitepaper, Quick Scan
+  - Account: tester@ductus.nl
 
 Veriductus is een **detacheringsorganisatie van software testers** via het Ductus-gildemodel.
 
@@ -159,22 +162,32 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 
 ## STATUS OVERZICHT
 
-| Stap | Fase | Prioriteit | Status |
-|---|---|---|---|
-| 1. Website live + SEO | 1 | Kritiek | ✅ |
-| 2. LinkedIn-aanwezigheid | 1 | Kritiek | ✅ |
-| 3. CRM + salesproces | 1 | Kritiek | ✅ |
-| 4. Whitepaper QA-staat | 1 | Hoog | ✅ |
-| 5. Quick Scan standaardiseren | 1 | Hoog | ✅ |
-| 6. 5 nieuwe klanten | 2 | Kritiek | ❌ |
-| 7. Webinar testautomatisering | 2 | Hoog | ❌ |
-| 8. Klantcase publiceren | 2 | Hoog | ❌ |
-| 9. LinkedIn Ads | 2 | Middel | ❌ |
-| 10. Retainer-aanbod formaliseren | 2 | Hoog | ❌ |
-| 11. Security whitepaper | 3 | Middel | ❌ |
-| 12. Referral-programma | 3 | Middel | ❌ |
-| 13. TestNet-aanwezigheid | 3 | Middel | ❌ |
-| 14. Overheid/zorg-segment | 3 | Laag | ❌ |
-| 15. Veriductus Meetup | 4 | Middel | ❌ |
-| 16. Jaarrapportage | 4 | Middel | ❌ |
-| 17. Plan 2027 | 4 | Hoog | ❌ |
+> Legenda: ✅ Volledig klaar | 🔄 Deliverable gereed, handmatige actie open | ❌ Nog niet gestart
+
+| Stap | Fase | Prioriteit | Status | Toelichting |
+|---|---|---|---|---|
+| 1. Website live + SEO | 1 | Kritiek | ✅ | Live op veriductus.nl, portaal, foto-headers |
+| 2. LinkedIn-aanwezigheid | 1 | Kritiek | ✅ | Pagina live: linkedin.com/company/veriductus — content + 10 posts klaar in `docs/linkedin/` |
+| 3. CRM + salesproces | 1 | Kritiek | 🔄 | Templates + pipeline-opzet klaar in `docs/crm/` — HubSpot account nog inrichten |
+| 4. Whitepaper QA-staat | 1 | Hoog | 🔄 | Gated pagina live op `/whitepaper`, nav + homepage-CTA toegevoegd — PDF (`public/whitepaper-qa-staat-nl.pdf`) nog handmatig opmaken en uploaden |
+| 5. Quick Scan standaardiseren | 1 | Hoog | ✅ | Methodiek, rapport-template en offerteprocedure klaar in `docs/quick-scan/` |
+| 6. 5 nieuwe klanten | 2 | Kritiek | ❌ | |
+| 7. Webinar testautomatisering | 2 | Hoog | ❌ | |
+| 8. Klantcase publiceren | 2 | Hoog | ❌ | |
+| 9. LinkedIn Ads | 2 | Middel | ❌ | |
+| 10. Retainer-aanbod formaliseren | 2 | Hoog | ❌ | |
+| 11. Security whitepaper | 3 | Middel | ❌ | |
+| 12. Referral-programma | 3 | Middel | ❌ | |
+| 13. TestNet-aanwezigheid | 3 | Middel | ❌ | |
+| 14. Overheid/zorg-segment | 3 | Laag | ❌ | |
+| 15. Veriductus Meetup | 4 | Middel | ❌ | |
+| 16. Jaarrapportage | 4 | Middel | ❌ | |
+| 17. Plan 2027 | 4 | Hoog | ❌ | |
+
+## OPENSTAANDE ACTIES (handmatig)
+
+| Prioriteit | Actie |
+|---|---|
+| ~~Kritiek~~ | ~~LinkedIn bedrijfspagina aanmaken + eerste 10 posts publiceren~~ ✅ linkedin.com/company/veriductus |
+| Kritiek | HubSpot Free account aanmaken + pipeline inrichten (setup in `docs/crm/salesproces.md`) |
+| Hoog | Whitepaper als PDF opmaken (bijv. Canva) → sla op als `public/whitepaper-qa-staat-nl.pdf` → deploy naar Vercel |
