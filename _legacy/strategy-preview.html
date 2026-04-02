@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategie Veriductus 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .collapsible:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+            <div class="max-w-4xl mx-auto px-6 py-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">
+                    Strategie Veriductus B.V. 2026
+                </h1>
+                <p class="text-lg text-gray-600">
+                    Productvision • Business Model Canvas • Marketingplan
+                </p>
+                <p class="text-sm text-gray-500 mt-4">
+                    Versie 1.0 | Maart 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-4xl mx-auto px-6 py-12">
+            <!-- Executive Summary -->
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Executive Summary</h2>
+                <p class="text-gray-700 mb-4">
+                    Veriductus B.V. is een gespecialiseerde QA- en softwarekwaliteitsconsultancy gevestigd in Nederland.
+                    Met <strong>12+ jaar ervaring</strong>, <strong>150+ afgeronde projecten</strong> en een <strong>klantbehoud van 98%</strong>
+                    biedt Veriductus een unieke combinatie van technische diepgang, strategisch advies en team coaching.
+                </p>
+
+                <div class="bg-white p-4 rounded border-l-4 border-blue-600 my-4">
+                    <p class="font-semibold text-gray-900">
+                        <strong>Kernbelofte:</strong> Veriductus zorgt dat uw software doet wat het moet doen — structureel, meetbaar en duurzaam.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-gray-900 mb-3">Ambitie 2026:</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600 font-bold">•</span>
+                            <span>Omzetgroei van 30% ten opzichte van 2025</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600 font-bold">•</span>
+                            <span>Minimaal 20 nieuwe klantrelaties</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600 font-bold">•</span>
+                            <span>Uitbouw van retainer-portfolio</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600 font-bold">•</span>
+                            <span>Sterke online zichtbaarheid op kernzoektermen</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Visie & Missie -->
+            <div class="border-l-4 border-blue-600 pl-6 py-6 mb-8">
+                <button class="collapsible flex items-center gap-3 w-full text-left" onclick="toggle(this)">
+                    <span class="text-2xl">🎯</span>
+                    <h2 class="text-2xl font-bold text-gray-900 flex-1">Visie & Missie</h2>
+                    <span class="chevron transition-transform">▼</span>
+                </button>
+                <div class="content hidden mt-4 text-gray-700 space-y-4">
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-2">Visie-statement</h3>
+                        <div class="bg-gray-100 border-l-4 border-blue-600 p-4 italic text-gray-900 font-semibold">
+                            "Software die werkt. Beyond the Bug."
+                        </div>
+                        <p class="mt-4 text-gray-700">
+                            Veriductus maakt software kwalitatief betrouwbaar — structureel en schaalbaar. Wij zijn de partner
+                            voor organisaties die niet langer willen accepteren dat bugs en productieproblemen de norm zijn.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-2">Missie</h3>
+                        <p class="text-gray-700">
+                            Elk softwareteam in Nederland de tools, architectuur en kennis geven om kwaliteit structureel te borgen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diensten -->
+            <div class="border-l-4 border-blue-600 pl-6 py-6 mb-8">
+                <button class="collapsible flex items-center gap-3 w-full text-left" onclick="toggle(this)">
+                    <span class="text-2xl">⚡</span>
+                    <h2 class="text-2xl font-bold text-gray-900 flex-1">Diensten & Waardepropositie</h2>
+                    <span class="chevron transition-transform">▼</span>
+                </button>
+                <div class="content hidden mt-4 text-gray-700 space-y-4">
+                    <div class="grid gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-gray-900">Test Automatisering</h4>
+                            <p class="text-gray-600 text-sm mt-1">Geautomatiseerde testsuites (unit, integratie, E2E)</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-gray-900">QA Architectuur</h4>
+                            <p class="text-gray-600 text-sm mt-1">Ontwerp van schaalbaar testkader</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-gray-900">Kwaliteitsmonitoring</h4>
+                            <p class="text-gray-600 text-sm mt-1">Continue monitoring met dashboards</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-gray-900">CI/CD Integratie</h4>
+                            <p class="text-gray-600 text-sm mt-1">Kwaliteitspoorten in pipelines</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-gray-900">Team Coaching</h4>
+                            <p class="text-gray-600 text-sm mt-1">Training in quality-first denken</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-gray-900">Security Testing</h4>
+                            <p class="text-gray-600 text-sm mt-1">OWASP-gebaseerde assessments</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="font-bold text-gray-900 mb-4">Value Propositions</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 font-bold text-lg leading-none mt-1">✓</span>
+                                <span class="text-gray-700">Minder bugs in productie (gemiddeld 40% reductie)</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 font-bold text-lg leading-none mt-1">✓</span>
+                                <span class="text-gray-700">Hogere leveringssnelheid met CI/CD kwaliteitspoorten</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 font-bold text-lg leading-none mt-1">✓</span>
+                                <span class="text-gray-700">Lagere risico's met security testing</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 font-bold text-lg leading-none mt-1">✓</span>
+                                <span class="text-gray-700">Kennisoverdracht - teams worden zelf beter</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 font-bold text-lg leading-none mt-1">✓</span>
+                                <span class="text-gray-700">Langdurige partner (98% klantbehoud)</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600 font-bold text-lg leading-none mt-1">✓</span>
+                                <span class="text-gray-700">Bewezen track record (150+ projecten)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Streams -->
+            <div class="border-l-4 border-blue-600 pl-6 py-6 mb-8">
+                <button class="collapsible flex items-center gap-3 w-full text-left" onclick="toggle(this)">
+                    <span class="text-2xl">📈</span>
+                    <h2 class="text-2xl font-bold text-gray-900 flex-1">Revenue Streams</h2>
+                    <span class="chevron transition-transform">▼</span>
+                </button>
+                <div class="content hidden mt-4 text-gray-700 space-y-4">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-blue-600 text-white">
+                                    <th class="p-3 text-left">Stroom</th>
+                                    <th class="p-3 text-left">Model</th>
+                                    <th class="p-3 text-right">Aandeel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="p-3 font-medium text-gray-900">Consultancy & implementatie</td>
+                                    <td class="p-3 text-gray-700">Uurtarief/fixed-price</td>
+                                    <td class="p-3 text-right font-bold text-blue-600">~55%</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-3 font-medium text-gray-900">Retainer/partnerschap</td>
+                                    <td class="p-3 text-gray-700">Maandelijks vaste fee</td>
+                                    <td class="p-3 text-right font-bold text-blue-600">~25%</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="p-3 font-medium text-gray-900">Training & workshops</td>
+                                    <td class="p-3 text-gray-700">Vaste prijzen per dag</td>
+                                    <td class="p-3 text-right font-bold text-blue-600">~12%</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-3 font-medium text-gray-900">Security testing</td>
+                                    <td class="p-3 text-gray-700">Fixed-price assessment</td>
+                                    <td class="p-3 text-right font-bold text-blue-600">~8%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="p-4 bg-yellow-50 border border-yellow-200 rounded">
+                        <p class="font-bold text-gray-900 mb-2">Tariefindicatie (marktconform NL):</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Consultancy uurtarief: €115–€165 excl. btw</li>
+                            <li>• Dagrate: €920–€1.320 excl. btw</li>
+                            <li>• Retainer: vanaf €2.500/maand</li>
+                            <li>• Training (incompany dag): €2.500–€4.500</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doelen 2026 -->
+            <div class="border-l-4 border-blue-600 pl-6 py-6 mb-8">
+                <button class="collapsible flex items-center gap-3 w-full text-left" onclick="toggle(this)">
+                    <span class="text-2xl">👥</span>
+                    <h2 class="text-2xl font-bold text-gray-900 flex-1">Doelen & KPI's 2026</h2>
+                    <span class="chevron transition-transform">▼</span>
+                </button>
+                <div class="content hidden mt-4 text-gray-700 space-y-4">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-4">Omzet & Groei</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Omzetgroei YoY</span>
+                                    <span class="font-bold text-blue-600">+30%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Nieuwe klanten</span>
+                                    <span class="font-bold text-blue-600">20</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Klantbehoud</span>
+                                    <span class="font-bold text-blue-600">>96%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Gem. contractwaarde</span>
+                                    <span class="font-bold text-blue-600">>€35.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-4">Marketing & Zichtbaarheid</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">LinkedIn-volgers</span>
+                                    <span class="font-bold text-blue-600">+500</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Website traffic</span>
+                                    <span class="font-bold text-blue-600">500+/maand</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Google-ranking</span>
+                                    <span class="font-bold text-blue-600">Top 5</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="text-gray-700">Leads via content</span>
+                                    <span class="font-bold text-blue-600">60+/jaar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap -->
+            <div class="border-l-4 border-blue-600 pl-6 py-6 mb-8">
+                <button class="collapsible flex items-center gap-3 w-full text-left" onclick="toggle(this)">
+                    <span class="text-2xl">📄</span>
+                    <h2 class="text-2xl font-bold text-gray-900 flex-1">Roadmap 2026</h2>
+                    <span class="chevron transition-transform">▼</span>
+                </button>
+                <div class="content hidden mt-4 space-y-4">
+                    <div class="p-4 bg-gradient-to-r from-blue-50 to-transparent rounded-lg border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3">Q1 2026</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>SEO-optimalisatie website</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>LinkedIn-cadans op orde</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Whitepaper "Staat van QA"</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>5 klantgesprekken</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-gradient-to-r from-blue-50 to-transparent rounded-lg border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3">Q2 2026</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Webinar "Test Automatisering in 90 dagen"</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>LinkedIn Ads campaign</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>5 nieuwe klanten onboarden</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Eerste klantcase publiceren</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-gradient-to-r from-blue-50 to-transparent rounded-lg border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3">Q3 2026</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Security Testing whitepaper</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Referral-programma formaliseren</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>TestNet-aanwezigheid</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Uitbreiding retainer-portfolio</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-gradient-to-r from-blue-50 to-transparent rounded-lg border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3">Q4 2026</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Veriductus Meetup organiseren</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Jaarrapportage/benchmark</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Review KPI's</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <span class="text-blue-600 font-bold">→</span>
+                                <span>Plan 2027 opstellen</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="border-t-2 border-gray-200 pt-8 mt-12 text-center text-gray-600 text-sm">
+                <p><strong>Veriductus B.V.</strong> | info@veriductus.nl | +31 (0)85 7444 544</p>
+                <p>Versie 1.0 | Maart 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggle(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('.chevron');
+            content.classList.toggle('hidden');
+            chevron.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+    </script>
+</body>
+</html>
