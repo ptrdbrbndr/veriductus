@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veriductus – Software die werkt. Beyond the Bug.</title>
+<meta name="description" content="Veriductus is uw partner voor software kwaliteit en test automatisering. Wij helpen organisaties bugs te elimineren, risico's te verlagen en software te leveren die werkt. 12+ jaar ervaring, 150+ projecten.">
+<meta name="keywords" content="QA consultancy, test automatisering, software kwaliteit, CI/CD, testarchitectuur, softwaretesten, Nederland">
+<meta name="author" content="Veriductus B.V.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://veriductus.nl/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veriductus.nl/">
+<meta property="og:title" content="Veriductus – Software die werkt. Beyond the Bug.">
+<meta property="og:description" content="Uw partner voor software kwaliteit en test automatisering. 12+ jaar ervaring, 150+ projecten, 98% klantbehoud.">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Veriductus">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Veriductus – Software die werkt. Beyond the Bug.">
+<meta name="twitter:description" content="Uw partner voor software kwaliteit en test automatisering. 12+ jaar ervaring, 150+ projecten, 98% klantbehoud.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --veriductus-blue: #4776A8;
+    --veriductus-green: #5FC38E;
+    --veriductus-navy: #1D1E4B;
+    --brand-gradient: linear-gradient(135deg, #4776A8, #5FC38E);
+    --bg-light: #F4F6FA;
+    --text-body: #3A3B5C;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(29,30,75,0.08);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .nav-logo svg { height: 40px; width: auto; }
+
+  .logo-wordmark {
+    font-size: 20px; font-weight: 800;
+    color: var(--veriductus-navy);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    color: var(--text-body); transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--veriductus-blue); }
+
+  .nav-cta {
+    background: var(--brand-gradient);
+    color: white; border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 14px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, #F4F6FA 55%, rgba(95,195,142,0.08) 100%);
+  }
+
+  .hero-blob {
+    position: absolute; right: -80px; top: 50%;
+    transform: translateY(-50%);
+    width: 600px; height: 600px;
+    background: var(--brand-gradient);
+    border-radius: 50% 40% 60% 30% / 40% 50% 50% 60%;
+    opacity: 0.07;
+    animation: morphBlob 8s ease-in-out infinite;
+  }
+
+  @keyframes morphBlob {
+    0%, 100% { border-radius: 50% 40% 60% 30% / 40% 50% 50% 60%; }
+    50% { border-radius: 30% 60% 40% 70% / 60% 30% 70% 40%; }
+  }
+
+  /* Grid lines decoration */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(71,118,168,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(71,118,168,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-content {
+    position: relative; max-width: 640px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-logo-decoration {
+    position: absolute; right: 60px; top: 50%;
+    transform: translateY(-50%) scale(8);
+    opacity: 0.10;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .hero-logo-decoration img {
+    height: auto;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 1px solid rgba(95,195,142,0.3);
+    border-radius: 100px; padding: 6px 16px;
+    font-size: 12px; font-weight: 600; color: var(--veriductus-green);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--veriductus-green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 900; line-height: 1.1;
+    color: var(--veriductus-navy);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 .accent {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    font-size: 18px; line-height: 1.7;
+    color: var(--text-body); opacity: 0.85;
+    max-width: 500px; margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--brand-gradient);
+    color: white; border: none; border-radius: 10px;
+    padding: 14px 28px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(95,195,142,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(95,195,142,0.45); }
+
+  .btn-outline {
+    background: white; color: var(--veriductus-navy);
+    border: 2px solid rgba(29,30,75,0.15); border-radius: 10px;
+    padding: 14px 28px; font-size: 15px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--veriductus-blue); transform: translateY(-2px); }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--veriductus-navy);
+    padding: 28px 48px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px; text-align: center;
+  }
+  .stat-item {}
+  .stat-number {
+    font-size: 32px; font-weight: 900;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px; color: rgba(255,255,255,0.55);
+    margin-top: 6px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.8px;
+  }
+
+  /* SERVICES */
+  .section {
+    padding: 96px 48px;
+  }
+
+  .section-label {
+    font-size: 12px; font-weight: 700;
+    color: var(--veriductus-green); text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800; color: var(--veriductus-navy);
+    letter-spacing: -1.5px; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 16px; color: var(--text-body);
+    opacity: 0.75; max-width: 520px; line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white; border-radius: 16px;
+    padding: 36px 32px;
+    border: 1px solid rgba(29,30,75,0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--brand-gradient);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(29,30,75,0.1); }
+
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(71,118,168,0.1), rgba(95,195,142,0.15));
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 22px;
+  }
+
+  .service-card h3 {
+    font-size: 17px; font-weight: 700;
+    color: var(--veriductus-navy); margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 14px; line-height: 1.65;
+    color: var(--text-body); opacity: 0.8;
+  }
+
+  /* GRADIENT SECTION */
+  .gradient-section {
+    background: var(--brand-gradient);
+    padding: 80px 48px;
+    position: relative; overflow: hidden;
+  }
+
+  .gradient-section::before {
+    content: '';
+    position: absolute; top: -50%; right: -10%;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%; 
+  }
+
+  .gradient-content {
+    position: relative; max-width: 600px;
+  }
+
+  .gradient-section h2 {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 800; color: white;
+    letter-spacing: -1.5px; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .gradient-section p {
+    font-size: 16px; color: rgba(255,255,255,0.82);
+    line-height: 1.7; margin-bottom: 36px; max-width: 480px;
+  }
+
+  .btn-white {
+    background: white; color: var(--veriductus-navy);
+    border: none; border-radius: 10px;
+    padding: 14px 28px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: transform 0.2s;
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+
+  /* PROCESS */
+  .process-section { background: white; }
+
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute; top: 36px; left: 10%;
+    width: 80%; height: 2px;
+    background: linear-gradient(90deg, var(--veriductus-blue), var(--veriductus-green));
+    z-index: 0;
+  }
+
+  .process-step {
+    text-align: center; padding: 0 24px;
+    position: relative; z-index: 1;
+  }
+
+  .step-number {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--brand-gradient);
+    color: white; font-size: 22px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 6px 20px rgba(95,195,142,0.35);
+  }
+
+  .process-step h4 {
+    font-size: 15px; font-weight: 700;
+    color: var(--veriductus-navy); margin-bottom: 8px;
+  }
+
+  .process-step p {
+    font-size: 13px; color: var(--text-body);
+    opacity: 0.7; line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--veriductus-navy);
+    padding: 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .footer-logo {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .footer-logo svg { height: 28px; }
+  .footer-wordmark {
+    font-size: 18px; font-weight: 800;
+    color: white; letter-spacing: -0.5px;
+  }
+  .footer-tagline {
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    font-style: italic; font-weight: 400;
+  }
+
+  .footer-links {
+    display: flex; gap: 28px; list-style: none;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.45); text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--veriductus-green); }
+
+  .footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.25);
+  }
+
+  /* ICON SYMBOL SVG */
+  .veri-symbol {
+    display: inline-block;
+  }
+
+  /* COOKIE BANNER */
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+    background: var(--veriductus-navy);
+    color: rgba(255,255,255,0.85);
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    box-shadow: 0 -4px 24px rgba(29,30,75,0.18);
+    border-top: 2px solid rgba(95,195,142,0.3);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  #cookie-banner.visible { transform: translateY(0); }
+  #cookie-banner p {
+    font-size: 13px; line-height: 1.6; flex: 1; min-width: 200px; margin: 0;
+  }
+  #cookie-banner a { color: var(--veriductus-green); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
+  .btn-cookie-accept {
+    background: var(--brand-gradient);
+    color: white; border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+  }
+  .btn-cookie-accept:hover { opacity: 0.85; }
+  .btn-cookie-decline {
+    background: transparent;
+    color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px 18px; font-size: 13px; font-weight: 500;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-cookie-decline:hover { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.8); }
+
+  @media (max-width: 640px) {
+    #cookie-banner { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+    .cookie-actions { width: 100%; }
+    .btn-cookie-accept, .btn-cookie-decline { flex: 1; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie-instellingen" data-testid="cookie-banner">
+  <p>
+    Wij gebruiken functionele cookies om deze website goed te laten werken. Wij plaatsen geen tracking- of advertentiecookies zonder uw toestemming.
+    Meer informatie vindt u in ons <a href="/privacy" data-testid="cookie-privacy-link">privacybeleid</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn-cookie-decline" data-testid="cookie-decline" onclick="cookieChoice(false)">Alleen noodzakelijk</button>
+    <button class="btn-cookie-accept" data-testid="cookie-accept" onclick="cookieChoice(true)">Akkoord</button>
+  </div>
+</div>
+
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="img/hero.png" alt="Veriductus" style="height:49px;width:auto;">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services" data-testid="nav-diensten">Diensten</a></li>
+    <li><a href="#approach" data-testid="nav-aanpak">Aanpak</a></li>
+    <li><a href="#cases" data-testid="nav-cases">Cases</a></li>
+    <li><a href="#about" data-testid="nav-over-ons">Over ons</a></li>
+  </ul>
+  <button class="nav-cta" data-testid="nav-cta">Gesprek inplannen →</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-logo-decoration" id="hero-logo"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-testid="hero-badge">Quality Assurance &amp; Software Excellence</div>
+    <h1 data-testid="hero-heading">
+      Software die werkt.<br>
+      <span class="accent">Beyond the bug.</span>
+    </h1>
+    <p>Veriductus helpt organisaties om kwaliteit te verankeren in het hart van softwareontwikkeling — van strategie tot uitvoering.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" data-testid="hero-cta-aanpak">Onze aanpak bekijken</button>
+      <button class="btn-outline">Cases & resultaten</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar" data-testid="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">98%</div>
+    <div class="stat-label">Klantretentie</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">150+</div>
+    <div class="stat-label">Projecten afgerond</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">40%</div>
+    <div class="stat-label">Minder bugs in productie</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">12+</div>
+    <div class="stat-label">Jaar ervaring</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services" data-testid="section-diensten">
+  <div class="section-label">Wat we doen</div>
+  <h2 class="section-title">Kwaliteit als fundament,<br>niet als afterthought</h2>
+  <p class="section-subtitle">Van testautomatisering tot kwaliteitsborging in agile teams — wij zorgen dat software doet wat het moet doen.</p>
+
+  <div class="services-grid">
+    <a href="/diensten/test-automatisering.html" class="service-card" data-testid="card-test-automatisering" style="text-decoration:none;color:inherit;display:block;">
+      <div class="service-icon">🔍</div>
+      <h3>Test Automatisering</h3>
+      <p>Geautomatiseerde testsuites die bugs vangen vóór ze in productie belanden. Sneller, betrouwbaarder, schaalbaar.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--veriductus-blue);margin-top:12px;display:inline-block;">Meer info →</span>
+    </a>
+    <a href="/diensten/qa-architectuur.html" class="service-card" data-testid="card-qa-architectuur" style="text-decoration:none;color:inherit;display:block;">
+      <div class="service-icon">🏗️</div>
+      <h3>QA Architectuur</h3>
+      <p>Duurzame testkaders die meegroeien met jouw platform. Van unit tests tot end-to-end scenario's.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--veriductus-blue);margin-top:12px;display:inline-block;">Meer info →</span>
+    </a>
+    <a href="/diensten/kwaliteitsmonitoring.html" class="service-card" data-testid="card-kwaliteitsmonitoring" style="text-decoration:none;color:inherit;display:block;">
+      <div class="service-icon">📊</div>
+      <h3>Kwaliteitsmonitoring</h3>
+      <p>Real-time inzicht in softwarekwaliteit via dashboards, metrics en geautomatiseerde rapportages.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--veriductus-blue);margin-top:12px;display:inline-block;">Meer info →</span>
+    </a>
+    <a href="/diensten/cicd-integratie.html" class="service-card" data-testid="card-cicd-integratie" style="text-decoration:none;color:inherit;display:block;">
+      <div class="service-icon">🚀</div>
+      <h3>CI/CD Integratie</h3>
+      <p>Kwaliteit ingebakken in je deployment pipeline. Elke release met vertrouwen uitrollen.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--veriductus-blue);margin-top:12px;display:inline-block;">Meer info →</span>
+    </a>
+    <a href="/diensten/team-coaching.html" class="service-card" data-testid="card-team-coaching" style="text-decoration:none;color:inherit;display:block;">
+      <div class="service-icon">🎓</div>
+      <h3>Team Coaching</h3>
+      <p>Ontwikkelteams trainen en begeleiden in quality-first denken. Van mindset tot tooling.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--veriductus-blue);margin-top:12px;display:inline-block;">Meer info →</span>
+    </a>
+    <a href="/diensten/security-testing.html" class="service-card" data-testid="card-security-testing" style="text-decoration:none;color:inherit;display:block;">
+      <div class="service-icon">🔐</div>
+      <h3>Security Testing</h3>
+      <p>Kwetsbaarheden identificeren voordat aanvallers dat doen. Penetratietests en security audits.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--veriductus-blue);margin-top:12px;display:inline-block;">Meer info →</span>
+    </a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="approach" data-testid="section-aanpak">
+  <div class="section-label">Onze werkwijze</div>
+  <h2 class="section-title">Van analyse naar zekerheid</h2>
+  <p class="section-subtitle" style="margin-bottom: 64px;">Een gestructureerde aanpak die kwaliteit borgt op elk moment in het traject.</p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <h4>Diagnose</h4>
+      <p>We brengen de huidige kwaliteitsstatus en risico's in kaart.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <h4>Strategie</h4>
+      <p>Een aanpak op maat, afgestemd op jouw team en technologie.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <h4>Implementatie</h4>
+      <p>Samen bouwen we het testkader op — stap voor stap.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <h4>Continuïteit</h4>
+      <p>Monitoring, coaching en doorontwikkeling om kwaliteit te borgen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GRADIENT CTA -->
+<section class="gradient-section" id="cases">
+  <div class="gradient-content">
+    <h2>Klaar om bugs definitief<br>achter je te laten?</h2>
+    <p>Plan een vrijblijvend gesprek met een van onze QA-specialisten en ontdek hoe Veriductus jouw software naar het volgende niveau tilt.</p>
+    <button class="btn-white" data-testid="cta-gesprek-plannen">Gesprek plannen →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="img/hero.png" alt="Veriductus" style="height:42px;width:auto;">
+    <div>
+      <div class="footer-wordmark">Veriductus</div>
+      <div class="footer-tagline">Beyond the bug</div>
+    </div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/diensten/test-automatisering.html" data-testid="footer-test-automatisering">Test Automatisering</a></li>
+    <li><a href="/diensten/qa-architectuur.html" data-testid="footer-qa-architectuur">QA Architectuur</a></li>
+    <li><a href="/diensten/kwaliteitsmonitoring.html" data-testid="footer-kwaliteitsmonitoring">Kwaliteitsmonitoring</a></li>
+    <li><a href="/diensten/cicd-integratie.html" data-testid="footer-cicd">CI/CD Integratie</a></li>
+    <li><a href="/diensten/team-coaching.html" data-testid="footer-team-coaching">Team Coaching</a></li>
+    <li><a href="/diensten/security-testing.html" data-testid="footer-security-testing">Security Testing</a></li>
+    <li><a href="#services">Diensten</a></li>
+    <li><a href="#approach">Aanpak</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="mailto:info@veriductus.nl" data-testid="footer-contact">Contact</a></li>
+    <li><a href="/privacy" data-testid="footer-privacy">Privacy</a></li>
+  </ul>
+  <div class="footer-contact-info" style="display: flex; gap: 24px; font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 16px;">
+    <div>
+      <strong style="color: rgba(255,255,255,0.65);">E-mail:</strong><br>
+      <a href="mailto:info@veriductus.nl" style="color: rgba(255,255,255,0.45); text-decoration: none;">info@veriductus.nl</a>
+    </div>
+    <div>
+      <strong style="color: rgba(255,255,255,0.65);">Telefoon:</strong><br>
+      <a href="tel:+31857444544" style="color: rgba(255,255,255,0.45); text-decoration: none;">+31 (0)85 7444 544</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 Veriductus B.V.</div>
+</footer>
+
+<script>
+  // Clone logo to hero section
+  var src = document.querySelector('.nav-logo img');
+  var dest = document.getElementById('hero-logo');
+  if (src && dest) { var c = src.cloneNode(true); dest.appendChild(c); }
+
+  // Contact button handler
+  function handleContactClick(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const email = 'info@veriductus.nl';
+    const subject = 'Gesprek aanvragen - Veriductus';
+    const body = 'Hallo,%0A%0AIk wil graag een gesprek inplannen met een QA-specialist.%0A%0AMet vriendelijke groet';
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  }
+
+  // Add event listeners to all CTA buttons
+  document.querySelectorAll('.nav-cta, .btn-white').forEach(btn => {
+    if (btn.textContent.includes('Gesprek')) {
+      btn.addEventListener('click', handleContactClick);
+      btn.setAttribute('data-testid', 'cta-contact-button');
+      btn.setAttribute('aria-label', 'Contactformulier openen of email verzenden');
+    }
+  });
+
+  // Navigation link handlers - use ID-based scrolling
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.getElementById(href.substring(1));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Footer links - handle contact link
+  document.querySelectorAll('.footer-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('mailto:')) {
+      link.addEventListener('click', function(e) {
+        // Let the href handle it naturally
+      });
+    } else if (href && href.startsWith('#')) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById(href.substring(1));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  });
+</script>
+
+<script>
+  // Cookie consent
+  function cookieChoice(accepted) {
+    localStorage.setItem('cookie-consent', accepted ? 'accepted' : 'declined');
+    var banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.remove('visible');
+    }
+  }
+
+  (function() {
+    var consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      setTimeout(function() {
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('visible');
+      }, 800);
+    }
+  })();
+</script>
+</body>
+</html>

@@ -48,3 +48,5 @@ testing/vibe-reports/*.png
 testing/vibe-reports/html/
 testing/vibe-reports/
 test-results/
+supabase/.temp/
+supabase/.temp/
