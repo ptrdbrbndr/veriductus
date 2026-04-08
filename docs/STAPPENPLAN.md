@@ -169,7 +169,7 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 | 1. Website live + SEO | 1 | Kritiek | ✅ | Live op veriductus.nl, 6 dienstpagina's, over-pagina, structured data (LocalBusiness+Service), portaal, foto-headers, Quick Scan formulier |
 | 2. LinkedIn-aanwezigheid | 1 | Kritiek | ✅ | Pagina live: linkedin.com/company/veriductus — content + 10 posts klaar in `docs/linkedin/` |
 | 3. CRM + salesproces | 1 | Kritiek | ✅ | Templates + pipeline-opzet klaar in `docs/crm/` — CRM leadoverzicht in portaal (`/portaal/leads`) met Supabase-tabel |
-| 4. Whitepaper QA-staat | 1 | Hoog | 🔄 | Gated pagina live op `/whitepaper`, nav + homepage-CTA toegevoegd — PDF (`public/whitepaper-qa-staat-nl.pdf`) nog handmatig opmaken en uploaden |
+| 4. Whitepaper QA-staat | 1 | Hoog | ✅ | Gated pagina live op `/whitepaper`, PDF gegenereerd (`public/whitepaper-qa-staat-nl.pdf`, 280 KB), download via e-mail gate + Resend |
 | 5. Quick Scan standaardiseren | 1 | Hoog | ✅ | Methodiek, rapport-template, offerteprocedure + publieke aanvraagpagina (`/quick-scan`) met Turnstile CAPTCHA |
 | 6. 5 nieuwe klanten | 2 | Kritiek | ❌ | |
 | 7. Webinar testautomatisering | 2 | Hoog | ❌ | |
@@ -190,7 +190,7 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 |---|---|
 | ~~Kritiek~~ | ~~LinkedIn bedrijfspagina aanmaken + eerste 10 posts publiceren~~ ✅ linkedin.com/company/veriductus |
 | ~~Kritiek~~ | ~~HubSpot Free account aanmaken + pipeline inrichten~~ ✅ CRM leadoverzicht nu in portaal (`/portaal/leads`) |
-| Hoog | Whitepaper als PDF opmaken (bijv. Canva) → sla op als `public/whitepaper-qa-staat-nl.pdf` → deploy naar Vercel |
+| ~~Hoog~~ | ~~Whitepaper als PDF opmaken → sla op als `public/whitepaper-qa-staat-nl.pdf` → deploy naar Vercel~~ ✅ PDF gegenereerd via Playwright script |
 
 ## NIEUW GEBOUWD (2026-04-08)
 
@@ -203,3 +203,4 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 - Nav bijgewerkt met "Over ons" link
 - Footer bijgewerkt met "Over ons" link
 - Gedeelde diensten-data (`src/lib/diensten.ts`) voor consistentie tussen overzicht en detailpagina's
+- Whitepaper PDF gegenereerd (`public/whitepaper-qa-staat-nl.pdf`, 280 KB) via `scripts/generate-whitepaper-pdf.ts`
