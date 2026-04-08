@@ -63,6 +63,14 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/over"
+                className="hover:text-white transition-colors"
+              >
+                Over ons
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/word-gilde-lid"
                 className="hover:text-white transition-colors"
               >

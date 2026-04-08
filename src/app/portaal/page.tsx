@@ -5,6 +5,13 @@ import { PortaalNav } from "./PortaalNav";
 
 const SECTIES = [
   {
+    href: "/portaal/leads",
+    titel: "Leads",
+    beschrijving: "Overzicht van alle inkomende leads uit contactformulier, Quick Scan en whitepaper.",
+    tags: ["CRM", "Sales"],
+    kleur: "#E74C3C",
+  },
+  {
     href: "/portaal/linkedin",
     titel: "LinkedIn",
     beschrijving: "Bedrijfspagina content, 10 kant-en-klare posts en contentkalender Q1/Q2.",

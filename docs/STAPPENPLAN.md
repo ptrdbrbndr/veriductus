@@ -1,6 +1,6 @@
 # Stappenplan — Veriductus
 
-> Status per 2026-03-19
+> Status per 2026-04-08
 
 ---
 
@@ -166,11 +166,11 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 
 | Stap | Fase | Prioriteit | Status | Toelichting |
 |---|---|---|---|---|
-| 1. Website live + SEO | 1 | Kritiek | ✅ | Live op veriductus.nl, portaal, foto-headers |
+| 1. Website live + SEO | 1 | Kritiek | ✅ | Live op veriductus.nl, 6 dienstpagina's, over-pagina, structured data (LocalBusiness+Service), portaal, foto-headers, Quick Scan formulier |
 | 2. LinkedIn-aanwezigheid | 1 | Kritiek | ✅ | Pagina live: linkedin.com/company/veriductus — content + 10 posts klaar in `docs/linkedin/` |
-| 3. CRM + salesproces | 1 | Kritiek | 🔄 | Templates + pipeline-opzet klaar in `docs/crm/` — HubSpot account nog inrichten |
+| 3. CRM + salesproces | 1 | Kritiek | ✅ | Templates + pipeline-opzet klaar in `docs/crm/` — CRM leadoverzicht in portaal (`/portaal/leads`) met Supabase-tabel |
 | 4. Whitepaper QA-staat | 1 | Hoog | 🔄 | Gated pagina live op `/whitepaper`, nav + homepage-CTA toegevoegd — PDF (`public/whitepaper-qa-staat-nl.pdf`) nog handmatig opmaken en uploaden |
-| 5. Quick Scan standaardiseren | 1 | Hoog | ✅ | Methodiek, rapport-template en offerteprocedure klaar in `docs/quick-scan/` |
+| 5. Quick Scan standaardiseren | 1 | Hoog | ✅ | Methodiek, rapport-template, offerteprocedure + publieke aanvraagpagina (`/quick-scan`) met Turnstile CAPTCHA |
 | 6. 5 nieuwe klanten | 2 | Kritiek | ❌ | |
 | 7. Webinar testautomatisering | 2 | Hoog | ❌ | |
 | 8. Klantcase publiceren | 2 | Hoog | ❌ | |
@@ -189,5 +189,17 @@ Op basis van resultaten: bepaal capaciteitsuitbreiding (freelancers, vaste medew
 | Prioriteit | Actie |
 |---|---|
 | ~~Kritiek~~ | ~~LinkedIn bedrijfspagina aanmaken + eerste 10 posts publiceren~~ ✅ linkedin.com/company/veriductus |
-| Kritiek | HubSpot Free account aanmaken + pipeline inrichten (setup in `docs/crm/salesproces.md`) |
+| ~~Kritiek~~ | ~~HubSpot Free account aanmaken + pipeline inrichten~~ ✅ CRM leadoverzicht nu in portaal (`/portaal/leads`) |
 | Hoog | Whitepaper als PDF opmaken (bijv. Canva) → sla op als `public/whitepaper-qa-staat-nl.pdf` → deploy naar Vercel |
+
+## NIEUW GEBOUWD (2026-04-08)
+
+- 6 aparte landingspagina's per dienst (`/diensten/[slug]`) met hero, details, voordelen, tools, praktijkvoorbeeld en CTA
+- Over-pagina (`/over`) met social proof: 12+ jaar, 150+  projecten, 98% klantbehoud, gildemodel-uitleg, tijdlijn
+- Structured data (JSON-LD): ProfessionalService + OfferCatalog met 6 diensten
+- Quick Scan aanvraagformulier (`/quick-scan`) met Turnstile CAPTCHA → leads tabel (herkomst: quick-scan)
+- CRM leadoverzicht in portaal (`/portaal/leads`) — tabel met naam, bedrijf, e-mail, herkomst, datum
+- Portaal dashboard uitgebreid met Leads-card
+- Nav bijgewerkt met "Over ons" link
+- Footer bijgewerkt met "Over ons" link
+- Gedeelde diensten-data (`src/lib/diensten.ts`) voor consistentie tussen overzicht en detailpagina's

@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 
 const NAVITEMS = [
   { href: "/portaal", label: "Dashboard", exact: true },
+  { href: "/portaal/leads", label: "Leads" },
   { href: "/portaal/linkedin", label: "LinkedIn" },
   { href: "/portaal/crm", label: "CRM & Sales" },
   { href: "/portaal/whitepaper", label: "Whitepaper" },

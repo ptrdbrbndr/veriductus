@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const COMING_SOON = true;
+const COMING_SOON = process.env.COMING_SOON !== "false";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

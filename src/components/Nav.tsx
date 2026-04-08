@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const NAV_LINKS = [
   { href: "/diensten", label: "Diensten" },
-  { href: "/gilde", label: "Over het Gilde" },
+  { href: "/over", label: "Over ons" },
   { href: "/whitepaper", label: "Whitepaper" },
   { href: "/word-gilde-lid", label: "Word Gilde-lid" },
   { href: "/contact", label: "Contact" },
