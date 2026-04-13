@@ -13,7 +13,7 @@ function markdownToHtml(md: string): string {
   // Simpele markdown → HTML conversie (voldoende voor dit document)
   let html = md
     // Metadata regel verwijderen
-    .replace(/^>.*?_Dit whitepaper is beschikbaar.*?_\n\n---\n/ms, "")
+    .replace(/^>[\s\S]*?_Dit whitepaper is beschikbaar[\s\S]*?_\n\n---\n/m, "")
     // Headers
     .replace(/^### (.+)$/gm, "<h3>$1</h3>")
     .replace(/^## (.+)$/gm, "<h2>$1</h2>")
