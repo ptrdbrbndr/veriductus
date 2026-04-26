@@ -4,6 +4,17 @@ _Versie 2.0 | Maart 2026_
 
 ---
 
+> **Doc-revalidatie — 2026-04-26.** Deze vision was laatst bijgewerkt op 2026-03-16 (commit ea7620e). De gildemodel-positionering en doelgroep zijn ongewijzigd. Wat sinds maart 2026 in de site- en pipeline-laag is gerealiseerd:
+>
+> - Volledige publieke site live op staging (homepage, 6 dienstpagina's, over-pagina, privacy-pagina, whitepaper-download)
+> - Quick-scan-formulier + portaal-leads-CRM (commit d9101d2)
+> - Whitepaper als PDF + nav-CTA + homepage-CTA (commits 4b43799, 7ec3dca)
+> - Coming-soon-pagina + redirects op `main` per OTAP-strategie (commits 98f6180, bea1c19)
+>
+> Voor exacte fase-status zie STAPPENPLAN.md (laatst bijgewerkt 2026-04-08).
+
+---
+
 ## Tagline
 
 > **"Betrouwbare kwaliteit, gedreven professionals."**

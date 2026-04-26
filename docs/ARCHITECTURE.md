@@ -1,5 +1,17 @@
 # Architectuur — Veriductus
 
+> **Doc-revalidatie — 2026-04-26.** Dit document was laatst bijgewerkt op 2026-03-16 (commit ea7620e). Sindsdien zijn 52 commits gepushed die de publieke en lead-pipeline-laag invullen — onderstaande tekening blijft het juiste mentale model, maar concrete componenten zijn nu in code:
+>
+> - **Publieke site** (`src/app/(site)/`) — landing, 6 dienstpagina's, over-pagina, privacy, whitepaper-download (commits 1f818b5, d9101d2, 4b43799)
+> - **Quick-scan-formulier** + intake-flow → portaal-leads-CRM (commit d9101d2)
+> - **Portaal** (`src/app/portaal/`) — interne tooling-route voor leads
+> - **Coming-soon-rerouting** op `main` (commits 98f6180, bea1c19) — staging blijft de volledige app
+> - **Structured data** + assets (favicon, apple-icon, LinkedIn-banner) gepushed
+>
+> Bevestig de huidige tekening tegen de live build vóór externe pre-flight.
+
+---
+
 ## Systeemoverzicht
 
 Veriductus is een QA-consultancybedrijf — geen SaaS-product. De "architectuur" beschrijft de digitale infrastructuur die de bedrijfsvoering ondersteunt: de publieke website, het CRM-systeem, marketing-automatisering, contentbeheer en de interne tooling die consultants gebruiken bij klanttrajecten.

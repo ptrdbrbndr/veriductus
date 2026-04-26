@@ -4,6 +4,20 @@ _Versie 1.0 | Maart 2026_
 
 ---
 
+> **Doc-revalidatie — 2026-04-26.** Deze baseline was laatst bijgewerkt op 2026-03-16 (commit ea7620e). Sindsdien zijn 52 commits gepushed met een omvangrijke uitbreiding van de publieke site en interne lead-handling — bevestig per status-cel via code-review vóór externe oplevering. Belangrijkste toevoegingen sinds maart-versie:
+>
+> - Coming-soon-pagina + redirects op `main` (commits 98f6180, bea1c19); volledige homepage staat op `staging` per ABSOLUTE RULE
+> - Landing- en privacy-pagina (commit 1f818b5)
+> - 6 dienstpagina's, over-pagina, quick-scan-formulier, portaal-leads-CRM en structured data (commit d9101d2) — uitbreidt scope qua ingest van persoonsgegevens via formulier en lead-pipeline
+> - Whitepaper PDF + download flow + nav-CTA (commits 4b43799, 7ec3dca)
+> - Veriductus favicon + apple-icon (commit 1d2103c) en LinkedIn-banner-assets (commit b0c60bd)
+> - ES2018 dotAll regex flag vervangen door `[\s\S]` (commit fd69171) — geen security-impact, build-compat fix
+> - Vibe-report screenshots bijgewerkt (commit abd3959)
+>
+> Inhoudelijke regels (MIDDEN-niveau, AVG voor lead-data) blijven geldig. Status-cellen hieronder zijn niet stuk-voor-stuk geverifieerd in deze revalidatie — pak een code-review-pass vóór externe audit of public release.
+
+---
+
 ## Privacy-niveau
 
 **Midden**
