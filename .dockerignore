@@ -1,0 +1,17 @@
+.git
+.github
+.next
+node_modules
+_legacy
+docs
+tests
+test-results
+playwright-report
+*.md
+.env*
+!/.env.example
+img
+scripts
+.vscode
+.claude
+INSTRUCTIES-VOOR-CLAUDE-CODE.md
